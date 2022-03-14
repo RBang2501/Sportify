@@ -100,6 +100,7 @@ h2:after {
   transform-style: preserve-3d;
   transform: translateZ(0);
   transition: 0.3s;
+  border-radius: 20px;
 }
 .cards .card img,
 .news .card img {
@@ -114,7 +115,8 @@ h2:after {
   padding: 20px;
   padding-bottom: 10px;
   font-size: 20px;
-  background: none;
+  /* background: none; */
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
   color: #fff;
   transform: translateY(100%);
   transition: 0.3s;
@@ -172,7 +174,7 @@ h2:after {
 }
 .news .article figcaption {
   font-size: 14px;
-  text-shadow: 0 1px 0 rgba(51,51,51,0.3);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
   color: #fff;
   left: 0;
   right: 0;
@@ -203,4 +205,11 @@ h2:after {
   opacity: 1;
   transform: none;
 }
+
+
+
+
+/* Newly added for gradient background of the figure caption */
+
+
 

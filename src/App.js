@@ -10,6 +10,11 @@ import { About } from "./components/About";
 // import PrivateRoute from "./components/PrivateRoute";
 import { Dashboard } from "./components/Dashboard";
 
+// styles
+import "./styles/templatemo-training-studio.css";
+import "./styles/font-awesome.css"
+import "./styles/bootstrap.min.css";
+
 function App() {
   return (
     <Router>
