@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 // styles
 import "../styles/card.tile.css";
-// // import "../styles/font-awesome.css"
 
 // images
 import spandanImg from "../assets/spandan.jpeg"
@@ -26,16 +27,24 @@ import fifaImg from '../assets/FIFA.png'
 import codImg from '../assets/COD.jpeg'
 import pubgImg from '../assets/PUBG.jpeg'
 
+const DoublesSportImgs = [footballImg, badmintonSinglesImg, basketballImg, tennisDoublesImg, cricketImg, tableTennisDoublesImg, volleyballImg, tugOfWarImg, carromImg, gullyCricketImg];
+const SinglesSportImgs = [badmintonSinglesImg, tableTennisSinglesImg, chessImg, gymEventImg];
+const EsportImgs = [valorantImg, fifaImg, codImg, pubgImg];
+const doubleSports = [ "Football", "Badminton Doubles", "Basketball", "Tennis Doubles", "Cricket", "Table Tennis Doubles", "Volleyball", "Tug Of War", "Carrom", "Gully Cricket"];
+const singleSports = [ "Badminton Singles", "Table Tennis Singles", "Chess", "Gym Event"];
+const ESports = ["Valorant", "FIFA", "COD", "PUB-G"];
 
 export const Dashboard = () => {
   return (
     <>
+    {/* Banner */}
     <div className="main-banner" id="top">
-        <img src={spandanImg} />
+        <img src={spandanImg} style={{width: "100%"}}/>
     </div>
     
     <section className="section" id="features">
 
+        {/* Team Sports */}
         <div className="container" id="TeamSports">
             <div className="row">
                 <div className="col-lg-6 offset-lg-3">
@@ -46,93 +55,22 @@ export const Dashboard = () => {
                             this layout for your business website.</p>
                     </div>
                 </div>
-
             </div>
         </div>
-        
         <div className="wrapperCard">
-
             <div className="cards">
-                <a href="https://www.w3schools.com/html/html_css.asp">
-                <figure className="card">
-                    <img src={footballImg} />
-                    <figcaption>Football</figcaption>
-                </figure>
-            </a>
-                
-
-                <a href="https://www.w3schools.com/html/html_css.asp">
+                {doubleSports.map((value, index) => {
+                    return (<Link to="register-for-sport">
                     <figure className="card">
-                        <img src={badmintonDoublessImg} />
-                        <figcaption>Badminton</figcaption>
+                        <img src={DoublesSportImgs[index]} />
+                        <figcaption>{value}</figcaption>
                     </figure>
-                </a>
-
-                <a href="https://www.w3schools.com/html/html_css.asp">
-                    <figure className="card">
-                        {/* <img src="./assets/basketball.svg" /> */}
-                        <img src={basketballImg}/>
-                        <figcaption>Basketball</figcaption>
-                    </figure>
-                </a>
-
-                <a href="https://www.w3schools.com/html/html_css.asp">
-                    <figure className="card">
-                        <img src={tennisDoublesImg} />
-                        <figcaption>Lawn Tennis</figcaption>
-                    </figure>
-                </a>
-
-                <a href="https://www.w3schools.com/html/html_css.asp">
-                    <figure className="card">
-                        <img src={cricketImg} />
-                        <figcaption>Cricket</figcaption>
-                    </figure>
-                </a>
-
-            </div>
-
-
-            <div className="cards">
-                
-                <a href="https://www.w3schools.com/html/html_css.asp">
-                    <figure className="card">
-                        <img src={tableTennisDoublesImg} />
-                        <figcaption>Table Tennis</figcaption>
-                    </figure>
-                </a>
-
-                <a href="https://www.w3schools.com/html/html_css.asp">
-                    <figure className="card">
-                        <img src={volleyballImg} />
-                        <figcaption>Volleyball</figcaption>
-                    </figure>
-                </a>
-                <a href="https://www.w3schools.com/html/html_css.asp">
-                    <figure className="card">
-                        <img src={tugOfWarImg} />
-                        <figcaption>Tug Of War</figcaption>
-                    </figure>
-                </a>
-
-                <a href="https://www.w3schools.com/html/html_css.asp">
-                    <figure className="card">
-                        <img src={carromImg} />
-                        <figcaption>Carrom</figcaption>
-                    </figure>
-                </a>
-
-
-                <a href="https://www.w3schools.com/html/html_css.asp">
-                    <figure className="card">
-                        <img src={gullyCricketImg} />
-                        <figcaption>Gully Cricket</figcaption>
-                    </figure>
-                </a>
-
+                    </Link>)
+                })}
             </div>
         </div>
 
+        {/* Single Sports */}
         <div className="container" id="SinglePlayer">
             <div className="row">
                 <div className="col-lg-6 offset-lg-3">
@@ -143,46 +81,22 @@ export const Dashboard = () => {
                             this layout for your business website.</p>
                     </div>
                 </div>
-
             </div>
         </div>
-
         <div className="wrapperCard">
-
             <div className="cards">
-
-                <a href="https://www.w3schools.com/html/html_css.asp">
+                {singleSports.map((value, index) => {
+                    return (<Link to="register-for-sport">
                     <figure className="card">
-                        <img src={badmintonSinglesImg} />
-                        <figcaption>Badminton</figcaption>
+                        <img src={SinglesSportImgs[index]} />
+                        <figcaption>{value}</figcaption>
                     </figure>
-                </a>
-
-                <a href="https://www.w3schools.com/html/html_css.asp">
-                    <figure className="card">
-                        <img src={tableTennisSinglesImg} />
-                        <figcaption>Table Tennis</figcaption>
-                    </figure>
-                </a>
-
-                <a href="https://www.w3schools.com/html/html_css.asp">
-                    <figure className="card">
-                        <img src={chessImg} />
-                        <figcaption>Chess</figcaption>
-                    </figure>
-                </a>
-
-                <a href="https://www.w3schools.com/html/html_css.asp">
-                    <figure className="card">
-                        <img src={gymEventImg} />
-                        <figcaption>Gym Event</figcaption>
-                    </figure>
-                </a>
-
+                    </Link>)
+                })}
             </div>
         </div>
 
-
+        {/* E Sports */}
         <div className="container" id="ESports">
             <div className="row">
                 <div className="col-lg-6 offset-lg-3">
@@ -196,43 +110,19 @@ export const Dashboard = () => {
 
             </div>
         </div>
-
+        
         <div className="wrapperCard">
-
             <div className="cards">
-
-                <a href="https://www.w3schools.com/html/html_css.asp">
+                {ESports.map((value, index) => {
+                    return (<Link to="register-for-sport">
                     <figure className="card">
-                        <img src={valorantImg} />
-                        <figcaption>Valorant</figcaption>
+                        <img src={EsportImgs[index]} />
+                        <figcaption>{value}</figcaption>
                     </figure>
-                </a>
-
-                <a href="https://www.w3schools.com/html/html_css.asp">
-                    <figure className="card">
-                        <img src={fifaImg} />
-                        <figcaption>FIFA</figcaption>
-                    </figure>
-                </a>
-
-                <a href="https://www.w3schools.com/html/html_css.asp">
-                    <figure className="card">
-                        <img src={codImg} />
-                        <figcaption>COD</figcaption>
-                    </figure>
-                </a>
-
-                <a href="https://www.w3schools.com/html/html_css.asp">
-                    <figure className="card">
-                        <img src={pubgImg} />
-                        <figcaption>PUB-G</figcaption>
-                    </figure>
-                </a>
-
+                    </Link>)
+                })}
             </div>
         </div>
-
-
     </section>
 </>
   );

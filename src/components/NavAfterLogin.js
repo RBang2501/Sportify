@@ -29,7 +29,7 @@ export const NavAfterLogin = () => {
                             <li className="scroll-to-section"><a href="#SinglePlayer">Single Player</a></li>
                             <li className="scroll-to-section"><a href="#ESports">E-Sports</a></li>
                             <li className="scroll-to-section"><a href="#contact-us">Contact</a></li>
-                            <li className="main-button"><Link to="/signup"> Sign Up</Link></li>
+                            <li className="main-button" onClick={handleLogout}><Link to="#"> Logout </Link></li>
                         </ul>
                         <a className='menu-trigger'>
                             <span>Menu</span>

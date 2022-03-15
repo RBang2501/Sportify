@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import { About } from "./components/About";
 // import PrivateRoute from "./components/PrivateRoute";
 import { Dashboard } from "./components/Dashboard";
+import {RegisterForSport} from './components/RegisterForSport';
 
 // styles
 import "./styles/templatemo-training-studio.css";
@@ -25,6 +26,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="signup" element={<Signup />} />
           <Route path="login" element={<Login />} />
+          <Route path="register-for-sport" element={<RegisterForSport/>} />
         </Routes>
         <Footer />
       </AuthProvider>
