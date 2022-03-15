@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 // styles
 import "../styles/card.tile.css";
@@ -27,23 +28,32 @@ import fifaImg from '../assets/FIFA.png'
 import codImg from '../assets/COD.jpeg'
 import pubgImg from '../assets/PUBG.jpeg'
 
+// Images Array
 const DoublesSportImgs = [footballImg, badmintonSinglesImg, basketballImg, tennisDoublesImg, cricketImg, tableTennisDoublesImg, volleyballImg, tugOfWarImg, carromImg, gullyCricketImg];
 const SinglesSportImgs = [badmintonSinglesImg, tableTennisSinglesImg, chessImg, gymEventImg];
 const EsportImgs = [valorantImg, fifaImg, codImg, pubgImg];
+
+// Sports names
 const doubleSports = [ "Football", "Badminton Doubles", "Basketball", "Tennis Doubles", "Cricket", "Table Tennis Doubles", "Volleyball", "Tug Of War", "Carrom", "Gully Cricket"];
 const singleSports = [ "Badminton Singles", "Table Tennis Singles", "Chess", "Gym Event"];
 const ESports = ["Valorant", "FIFA", "COD", "PUB-G"];
 
+export var currSport = [];
+const allowedTeamPlayers = [9, 2, 7, 2, 11, 2, 8, 8, 2, 6];
+const allowedESportPlayers = [5, 2, 5, 4];
+
 export const Dashboard = () => {
+    const { currentUser } = useAuth();
+
   return (
     <>
     {/* Banner */}
     <div className="main-banner" id="top">
         <img src={spandanImg} style={{width: "100%"}}/>
     </div>
-    
-    <section className="section" id="features">
 
+    {currentUser ? 
+    <section className="section" id="features">
         {/* Team Sports */}
         <div className="container" id="TeamSports">
             <div className="row">
@@ -60,7 +70,7 @@ export const Dashboard = () => {
         <div className="wrapperCard">
             <div className="cards">
                 {doubleSports.map((value, index) => {
-                    return (<Link to="register-for-sport">
+                    return (<Link to="register-for-sport" onClick={function(){currSport = [value, allowedTeamPlayers[index]]}}>
                     <figure className="card">
                         <img src={DoublesSportImgs[index]} />
                         <figcaption>{value}</figcaption>
@@ -86,7 +96,7 @@ export const Dashboard = () => {
         <div className="wrapperCard">
             <div className="cards">
                 {singleSports.map((value, index) => {
-                    return (<Link to="register-for-sport">
+                    return (<Link to="register-for-sport" onClick={function(){currSport = value}}>
                     <figure className="card">
                         <img src={SinglesSportImgs[index]} />
                         <figcaption>{value}</figcaption>
@@ -114,7 +124,7 @@ export const Dashboard = () => {
         <div className="wrapperCard">
             <div className="cards">
                 {ESports.map((value, index) => {
-                    return (<Link to="register-for-sport">
+                    return (<Link to="register-for-sport" onClick={function(){currSport = value}}>
                     <figure className="card">
                         <img src={EsportImgs[index]} />
                         <figcaption>{value}</figcaption>
@@ -124,6 +134,7 @@ export const Dashboard = () => {
             </div>
         </div>
     </section>
+    : <></>}
 </>
   );
 };

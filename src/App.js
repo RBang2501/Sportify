@@ -9,26 +9,26 @@ import Login from "./components/Login";
 import { About } from "./components/About";
 // import PrivateRoute from "./components/PrivateRoute";
 import { Dashboard } from "./components/Dashboard";
-import {RegisterForSport} from './components/RegisterForSport';
+import { RegisterForSport } from "./components/RegisterForSport";
 
 // styles
 import "./styles/templatemo-training-studio.css";
-import "./styles/font-awesome.css"
+import "./styles/font-awesome.css";
 import "./styles/bootstrap.min.css";
 
 function App() {
   return (
     <Router>
       <AuthProvider>
-        <Header/>
+        <Header />
         <Routes>
           <Route path="/" element={<Dashboard />}></Route>
           <Route path="about" element={<About />} />
           <Route path="signup" element={<Signup />} />
           <Route path="login" element={<Login />} />
-          <Route path="register-for-sport" element={<RegisterForSport/>} />
+          <Route path="register-for-sport" element={<RegisterForSport />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </AuthProvider>
     </Router>
   );

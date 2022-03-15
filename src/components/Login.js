@@ -26,7 +26,7 @@ export default function Login() {
   }
 
   return (
-    <div className="container-md" style={{maxWidth: "500px"}}>
+    <div className="container-md" style={{maxWidth: "500px", marginTop: "15%"}}>
       <h1 className="mt-100 text-center"> Login </h1>
         {error && <div className="alert alert-danger" role="alert">{error}</div>}
             <form onSubmit={handleSubmitLogin} className="d-flex flex-column">

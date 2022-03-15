@@ -1,17 +1,61 @@
 import React from "react";
 import '../styles/CreateTeamForm.css'
-
-const allowedMembers = [];
+import { currSport } from "./Dashboard";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import firebase from "firebase/compat/app"
+import "firebase/compat/auth"
+import { Link } from "react-router-dom";
 
 export const RegisterForSport = () => {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-    const items = []
+  function handleRegistration(){
+    var tname = document.getElementById('teamName').value;
+    var members = [];
+    for(let i=0;i<currSport[1];i++){
+      members[i] = document.getElementById(`member_${i}`);
+    }
+  
+    firebase.database().ref(`Teams/Badminton-Doubles/${tname}`).set({
+        TeamName: tname,
+        Member1: members[1],
+        Member2: members[2]
+    });
+    console.log("hello world");
+    navigate("/");
+  }
+  // async function handleRegistration(e) {
+  //   e.preventDefault();
 
-  for (let i=0;i<4;i++) {
+  //   try {
+  //     setError("");
+  //     setLoading(true);
+  //     await uploadToFirebase();
+  //     navigate("/");
+  //   } catch {
+  //     setError("Failed to create an account");
+  //   }
+  // // var tname = document.getElementById('teamName').value;
+  // // var m1 = document.getElementById('mem1').value;
+  // // var m2 = document.getElementById('mem2').value;
+
+  // // firebase.database().ref(`Teams/Badminton-Doubles/${tname}`).set({
+  // //     TeamName: tname,
+  // //     Member1: m1,
+  // //     Member2: m2
+  // // });
+  //   setLoading(false);
+  // }
+
+  const items = []
+  for (let i=0;i<currSport[1];i++) {
     items.push(<div className="inputContainer">
-        <input type="tel" className="input" placeholder="a" />
-        <label for="" className="label">
-        Member Email - ID
+        <input type="tel" className="input" placeholder="a" id={"member_"+i}/>
+        <label htmlFor="" className="label">
+        Member Email-ID
         </label>
     </div>)
   }
@@ -20,19 +64,22 @@ export const RegisterForSport = () => {
     <div style={{backgroundImage: "linear-gradient( black, white)"}}>
     <div className="signupFrm">
       <div className="wrapper">
-        <form action="" className="form">
+        <form onSubmit={handleRegistration} className="form" style={{marginTop: "450px", marginBottom: "100px"}}>
           <h1 className="title"> Create New Team </h1>
+          <h2> {currSport[0]} </h2>
           <div className="inputContainer">
             <input type="text" className="input" placeholder="" />
-            <label for="" className="label">
+            <label htmlFor="" className="label">
               Team Name
             </label>
           </div>
           {items}
-          <input type="submit" className="submitBtn" value="Sign up" />
+          <Link to="/"><input type="submit" className="submitBtn" value="Register" id="register"/></Link>
         </form>
       </div>
     </div>
     </div>
   );
 };
+
+// document.getElementById("register").addEventListener("click", (e) => {

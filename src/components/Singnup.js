@@ -37,7 +37,7 @@ export default function Signup() {
   return (
     <div
       className="container-md"
-      style={{ maxWidth: "500px", position: "relative" }}
+      style={{ maxWidth: "500px", position: "relative", marginTop: "10%"}}
     >
       <h1 className="mt-100 text-center"> Sign Up </h1>{" "}
       {error && (
