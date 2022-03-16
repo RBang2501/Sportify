@@ -25,7 +25,7 @@ export const NavAfterLogin = () => {
         <div className="row">
           <div className="col-12">
             <nav className="main-nav">
-              <a href="index.html" className="logo">
+              <a href="/" className="logo">
                 
                 Sport <em> ify </em>
               </a>
