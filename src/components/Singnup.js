@@ -39,16 +39,16 @@ export default function Signup() {
       className="container-md"
       style={{ maxWidth: "500px", position: "relative", marginTop: "10%"}}
     >
-      <h1 className="mt-100 text-center"> Sign Up </h1>{" "}
+      <h1 className="mt-100 text-center"> Sign Up </h1>
       {error && (
         <div className="alert alert-danger" role="alert">
-          {" "}
-          {error}{" "}
+          
+          {error}
         </div>
-      )}{" "}
+      )}
       <form onSubmit={handleSubmit} className="d-flex flex-column">
         <div className="form-outline mb-4">
-          <label className="form-label"> Email </label>{" "}
+          <label className="form-label"> Email </label>
           <input
             type="email"
             id="email"
@@ -56,9 +56,9 @@ export default function Signup() {
             ref={emailRef}
             required
           />
-        </div>{" "}
+        </div>
         <div className="form-outline mb-4">
-          <label className="form-label"> Password </label>{" "}
+          <label className="form-label"> Password </label>
           <input
             type="password"
             id="pass"
@@ -66,9 +66,9 @@ export default function Signup() {
             ref={passwordRef}
             required
           />
-        </div>{" "}
+        </div>
         <div className="form-outline mb-4">
-          <label className="form-label"> Confirm Password </label>{" "}
+          <label className="form-label"> Confirm Password </label>
           <input
             type="password"
             id="confirmpass"
@@ -76,22 +76,22 @@ export default function Signup() {
             ref={passwordConfirmRef}
             required
           />
-        </div>{" "}
+        </div>
         <div className="d-flex justify-content-around align-items-center mb-4">
           <p>
-            Already a User ? <Link to="/login"> Login </Link>{" "}
-          </p>{" "}
-        </div>{" "}
+            Already a User ? <Link to="/login"> Login </Link>
+          </p>
+        </div>
         <div className="d-flex justify-content-around align-items-center mb-4">
           <button
             type="submit"
             disabled={loading}
             className="btn btn-primary btn-lg btn-block"
           >
-            Sign up{" "}
-          </button>{" "}
-        </div>{" "}
-      </form>{" "}
+            Sign up
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
