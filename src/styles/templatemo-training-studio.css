@@ -150,7 +150,7 @@ html,
 body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    background-color: #fff;
+    /* background-color: #fff; */
     font-size: 16px;
     -ms-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
@@ -190,7 +190,7 @@ global styles
 
 html,
 body {
-    background: #fff;
+    /* background: #fff; */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -205,17 +205,21 @@ body {
 }
 
 @media (max-width: 991px) {
+
     html,
     body {
         overflow-x: hidden;
     }
+
     .mobile-top-fix {
         margin-top: 30px;
         margin-bottom: 0px;
     }
+
     .mobile-bottom-fix {
         margin-bottom: 30px;
     }
+
     .mobile-bottom-fix-big {
         margin-bottom: 60px;
     }
@@ -279,33 +283,33 @@ header
 
 .background-header {
     background: rgba(250, 250, 250, 0.99) !important;
-    height: 80px!important;
-    position: fixed!important;
+    height: 80px !important;
+    position: fixed !important;
     top: 0px;
     left: 0px;
     right: 0px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15)!important;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) !important;
 }
 
 .background-header .logo,
 .background-header .main-nav .nav li a {
-    color: #232d39!important;
+    color: #232d39 !important;
 }
 
 .background-header .main-nav .nav li:last-child a {
-    color: rgb(0, 0, 0) !important;
+    color: #fff !important;
 }
 
 .background-header .main-nav .nav li:last-child a:hover {
-    color: rgb(0, 0, 0)!important;
+    color: #fff !important;
 }
 
 .background-header .main-nav .nav li:hover a {
-    color: #ed563b!important;
+    color: #ed563b !important;
 }
 
 .background-header .nav li a.active {
-    color: #ed563b!important;
+    color: #ed563b !important;
 }
 
 .header-area {
@@ -329,7 +333,7 @@ header
 
 .header-area .main-nav .logo {
     line-height: 80px;
-    color: rgb(145, 145, 145);
+    color: #fff;
     font-size: 32px;
     font-weight: 800;
     text-transform: uppercase;
@@ -381,7 +385,7 @@ header
 }
 
 .header-area .main-nav .nav li a {
-    color: #000;
+    color: #fff;
 }
 
 .header-area .main-nav .nav li:last-child a {
@@ -406,13 +410,13 @@ header
 
 .header-area .main-nav .nav li:hover a,
 .header-area .main-nav .nav li a.active {
-    color: #ed563b!important;
+    color: #ed563b !important;
     opacity: 1;
 }
 
 .background-header .main-nav .nav li:hover a,
 .background-header .main-nav .nav li a.active {
-    color: #ed563b!important;
+    color: #ed563b !important;
     opacity: 1;
 }
 
@@ -544,6 +548,7 @@ header
         padding-left: 12px;
         padding-right: 12px;
     }
+
     .header-area .main-nav:before {
         display: none;
     }
@@ -553,11 +558,13 @@ header
     .header-area .main-nav .logo {
         color: #1e1e1e;
     }
+
     .header-area.header-sticky .nav li a:hover,
     .header-area.header-sticky .nav li a.active {
-        color: #ed563b!important;
+        color: #ed563b !important;
         opacity: 1;
     }
+
     .header-area {
         background-color: #f7f7f7;
         padding: 0px 15px;
@@ -565,18 +572,23 @@ header
         box-shadow: none;
         text-align: center;
     }
+
     .header-area .container {
         padding: 0px;
     }
+
     .header-area .logo {
         margin-left: 30px;
     }
+
     .header-area .menu-trigger {
         display: block !important;
     }
+
     .header-area .main-nav {
         overflow: hidden;
     }
+
     .header-area .main-nav .nav {
         float: none;
         width: 100%;
@@ -587,25 +599,31 @@ header
         transition: all 0s ease 0s;
         margin-left: 0px;
     }
+
     .header-area .main-nav .nav li:first-child {
         border-top: 1px solid #eee;
     }
+
     .header-area .main-nav .nav li:last-child {
         width: 100%;
         background-color: #ed563b;
         color: #fff;
     }
+
     .header-area .main-nav .nav li:last-child a {
-        background-color: #ed563b!important;
+        background-color: #ed563b !important;
     }
+
     .header-area .main-nav .nav li:last-child a:hover,
     .header-area .main-nav .nav li:last-child:hover a {
-        background-color: #ed563b!important;
-        color: #fff!important;
+        background-color: #ed563b !important;
+        color: #fff !important;
     }
+
     .header-area.header-sticky .nav {
         margin-top: 80px !important;
     }
+
     .header-area .main-nav .nav li {
         width: 100%;
         background: #fff;
@@ -613,6 +631,7 @@ header
         padding-left: 0px !important;
         padding-right: 0px !important;
     }
+
     .header-area .main-nav .nav li a {
         height: 50px !important;
         line-height: 50px !important;
@@ -621,13 +640,16 @@ header
         background: #f7f7f7 !important;
         color: #232d39 !important;
     }
+
     .header-area .main-nav .nav li:last-child a {
-        color: #fff!important;
+        color: #fff !important;
     }
+
     .header-area .main-nav .nav li a:hover {
         background: #eee !important;
-        color: #ed563b!important;
+        color: #ed563b !important;
     }
+
     .header-area .main-nav .nav li.submenu ul {
         position: relative;
         visibility: inherit;
@@ -640,22 +662,27 @@ header
         box-shadow: none;
         height: 0px;
     }
+
     .header-area .main-nav .nav li.submenu ul li a {
         font-size: 12px;
         font-weight: 400;
     }
+
     .header-area .main-nav .nav li.submenu ul li a:hover:before {
         width: 0px;
     }
+
     .header-area .main-nav .nav li.submenu ul.active {
         height: auto !important;
     }
+
     .header-area .main-nav .nav li.submenu:after {
         color: #3B566E;
         right: 25px;
         font-size: 14px;
         top: 15px;
     }
+
     .header-area .main-nav .nav li.submenu:hover ul,
     .header-area .main-nav .nav li.submenu:focus ul {
         height: 0px;
@@ -1311,35 +1338,44 @@ responsive
 */
 
 @media (max-width: 992px) {
-    .main-banner .caption h2 {
-        font-size: 64px;
-    }
-    #features {
-        margin-bottom: 110px;
-    }
-    #features .feature-item {
-        margin-bottom: 30px;
-    }
-    #our-classes .tabs-content {
-        margin-left: 0px;
-        margin-top: 30px;
-    }
-    .trainer-item {
-        margin-bottom: 30px;
-    }
-    #contact-us #map {
-        margin-bottom: -7px;
-    }
-    #contact-us .contact-form {
-        padding: 30px;
-    }
-    #contact-us .contact-form #contact {
-        padding: 30px;
-    }
-}
 
-@media (max-width: 450px) {
-    .feature-item .right-content a.text-button {
-        margin-left: 130px;
+    .main-banner .caption h2 {
+      font-size: 64px;
     }
-}
+  
+    #features {
+      margin-bottom: 110px;
+    }
+  
+    #features .feature-item {
+      margin-bottom: 30px;
+    }
+  
+    #our-classes .tabs-content {
+      margin-left: 0px;
+      margin-top: 30px;
+    }
+  
+    .trainer-item {
+      margin-bottom: 30px;
+    }
+  
+    #contact-us #map {
+      margin-bottom: -7px;
+    }
+  
+    #contact-us .contact-form {
+      padding: 30px;
+    }
+  
+    #contact-us .contact-form #contact {
+      padding: 30px;
+    }
+  
+  }
+  
+  @media (max-width: 450px) {
+    .feature-item .right-content a.text-button {
+      margin-left: 130px;
+    }
+  }

@@ -1,10 +1,10 @@
-.leaderboard {
+.listbox-leaderboard {
     max-width: 490px;
     width: 100%;
     border-radius: 12px;
 }
 
-.leaderboard header {
+.listbox-leaderboard header {
     --start: 20%;
     height: 130px;
     background-image: repeating-radial-gradient(circle at var(--start), transparent 0%, transparent 10%, rgba(54, 89, 219, 0.33) 10%, rgba(54, 89, 219, 0.33) 17%), linear-gradient(to right, #5b7cfa, #3659db);
@@ -14,7 +14,7 @@
     overflow: hidden;
 }
 
-.leaderboard header .leaderboard__title {
+.listbox-leaderboard header .listbox-leaderboard__title {
     position: absolute;
     z-index: 2;
     top: 50%;
@@ -24,17 +24,17 @@
     margin: 0;
 }
 
-.leaderboard header .leaderboard__title span {
+.listbox-leaderboard header .listbox-leaderboard__title span {
     display: block;
 }
 
-.leaderboard header .leaderboard__title--top {
+.listbox-leaderboard header .listbox-leaderboard__title--top {
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 6.5px;
 }
 
-.leaderboard header .leaderboard__title--bottom {
+.listbox-leaderboard header .listbox-leaderboard__title--bottom {
     font-size: 13px;
     font-weight: 500;
     letter-spacing: 3.55px;
@@ -42,7 +42,7 @@
     transform: translateY(-2px);
 }
 
-.leaderboard header .leaderboard__icon {
+.listbox-leaderboard header .listbox-leaderboard__icon {
     fill: #fff;
     opacity: 0.35;
     width: 50px;
@@ -52,7 +52,7 @@
     transform: translate(-50%, -50%);
 }
 
-.leaderboard__profiles {
+.listbox-leaderboard__profiles {
     background-color: #fff;
     border-radius: 0 0 12px 12px;
     padding: 15px 15px 20px;
@@ -60,7 +60,7 @@
     row-gap: 8px;
 }
 
-.leaderboard__profile {
+.listbox-leaderboard__profile {
     display: grid;
     justify-content: center;
     /* grid-template-columns: 1fr 3fr 1fr; */
@@ -74,40 +74,41 @@
     background-color: #fff;
 }
 
-.leaderboard__profile:hover {
+.listbox-leaderboard__profile:hover {
     transform: scale(1.2);
     box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
 }
 
-.leaderboard__picture {
+/* .leaderboard__picture {
     max-width: 100%;
     width: 60px;
     border-radius: 50%;
     box-shadow: 0 0 0 10px #ebeef3, 0 0 0 22px #f3f4f6;
-}
+} */
 
-.leaderboard__name {
+.listbox-leaderboard__name {
     color: #979cb0;
     font-weight: 600;
     font-size: 20px;
     letter-spacing: 0.64px;
     margin-left: 12px;
+    padding: 1.5%;
     /* text-align: center; */
 }
 
-.leaderboard__value {
+/* .leaderboard__value {
     color: #35d8ac;
     font-weight: 700;
     font-size: 34px;
     text-align: right;
-}
+} */
 
-.leaderboard__value>span {
+/* .leaderboard__value>span {
     opacity: 0.8;
     font-weight: 600;
     font-size: 13px;
     margin-left: 3px;
-}
+} */
 
 
 /* body {
@@ -119,7 +120,7 @@
     font-family: "Source Sans Pro", sans-serif;
   } */
 
-.leaderboard {
+.listbox-leaderboard {
     box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.4);
 }
 
@@ -128,13 +129,13 @@ html {
     box-sizing: border-box;
 }
 
-*,
+/* *,
 *:before,
 *:after {
     box-sizing: inherit;
-}
+} */
 
-body {
+/* body {
     background-image: linear-gradient(48deg, #5a72b5 0%, #e5efe9 70%);
     color: #121943;
     background-repeat: no-repeat;
@@ -146,14 +147,14 @@ body {
     height: 100%;
     place-items: center;
     line-height: 1.2;
-}
+} */
 
-.heading {
+.listbox-heading {
     font-size: 1.5em;
     margin-bottom: 12px;
 }
 
-.card {
+.listbox-card {
     background: #fff;
     background-image: linear-gradient(48deg, #fff 0%, #e5efe9 100%);
     border-top-right-radius: 16px;
@@ -167,16 +168,16 @@ body {
     width: 100%;
 }
 
-.content-wrapper {
+/* .content-wrapper {
     font-size: 1.1em;
     margin-bottom: 44px;
 }
 
 .content-wrapper:last-child {
     margin-bottom: 0;
-}
+} */
 
-.button {
+/* .button {
     align-items: center;
     background: #e5efe9;
     border: 1px solid #5a72b5;
@@ -195,17 +196,17 @@ body {
     border: 2px solid transparent;
     box-shadow: 0px 0px 0px 2px #121943;
     outline: solid 4px transparent;
-}
+} */
 
-.link {
+/* .link {
     color: #121943;
 }
 
 .link:focus {
     box-shadow: 0px 0px 0px 2px #121943;
-}
+} */
 
-.input-wrapper {
+/* .input-wrapper {
     display: flex;
     flex-direction: column;
 }
@@ -221,29 +222,29 @@ body {
 .input-wrapper .optional {
     color: #5a72b5;
     font-size: 0.9em;
-}
+} */
 
-.input-wrapper .input {
+/* .input-wrapper .input {
     border: 1px solid #5a72b5;
     border-radius: 4px;
     height: 40px;
     padding: 8px;
-}
+} */
 
-code {
+/* code {
     background: #e5efe9;
     border: 1px solid #5a72b5;
     border-radius: 4px;
     padding: 2px 4px;
-}
+} */
 
-.modal-header {
+.listbox-modal-header {
     align-items: baseline;
     display: flex;
     justify-content: space-between;
 }
 
-.close {
+.listbox-close {
     background: none;
     border: none;
     cursor: pointer;
@@ -253,11 +254,11 @@ code {
     width: 16px;
 }
 
-.close svg {
+.listbox-close svg {
     width: 16px;
 }
 
-.modal-wrapper {
+.listbox-modal-wrapper {
     align-items: center;
     background: rgba(0, 0, 0, 0.7);
     bottom: 0;
@@ -294,7 +295,7 @@ code {
     z-index: 1;
 }
 
-.outside-trigger {
+.listbox-outside-trigger {
     bottom: 0;
     cursor: default;
     left: 0;
@@ -303,6 +304,17 @@ code {
     top: 0;
 }
 
-.button__link {
+.listbox-button__link {
     text-decoration: none;
+}
+
+.listbox-hed
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listbox-hed h2{
+    font-family: "Source Sans Pro", sans-serif;
+    color: white;
 }

@@ -12,11 +12,11 @@
     --weight3: 600;
 }
 
-body {
+/* body {
     font-size: 15px;
     font-family: 'Poppins', sans-serif;
     background-color: var(--veryLightGray);
-}
+} */
 
 .attribution {
     font-size: 11px;
@@ -68,9 +68,9 @@ h1:last-of-type {
     text-align: center;
 }
 
-img {
+/* img {
     float: right;
-}
+} */
 
 @media (max-width: 450px) {
     .box {
@@ -127,7 +127,7 @@ h2 {
         /* top: 150px; */
     }
     .box {
-        width: "500px";
+        width: 100%;
     }
     .header p {
         width: 30%;

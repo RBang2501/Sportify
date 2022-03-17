@@ -226,11 +226,11 @@ li:hover .description {
     transition: 0.6s 0.3s;
 }
 
-header {
+/* header {
     padding: 1rem;
     font-family: "Courier New", monospace, serif;
     font-size: 1em;
-}
+} */
 
 h1 {
     margin-top: 0;

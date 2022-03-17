@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const NavBeforeLogin = () => {
   return (
     <header
-      className="header-area  header-sticky"
+      className="header-area  header-sticky background-header"
       style={{ top: "0", position: "fixed", backgroundColor: "white" }}
     >
       <div className="container">
@@ -27,7 +27,7 @@ export const NavBeforeLogin = () => {
                   <Link to="/signup"> Sign Up </Link>
                 </li>
               </ul>
-              <a className="menu-trigger">
+              <a className="menu-trigger active">
                 <span> Menu </span>
               </a>
             </nav>

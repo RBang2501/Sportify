@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/SportMenu.css";
 import { Link } from "react-router-dom";
 import "../styles/Scorecard.css";
+import refreshIcon from "../assets/icons8-refresh.svg";
 import {
   getDatabase,
   ref,
@@ -41,22 +42,17 @@ export const ScoreSet = () => {
         document.getElementById("setB2").innerText = team22;
         document.getElementById("setB3").innerText = team23;
 
-        let TeamAScore = 0, TeamBScore = 0;
-        if(team11 > team21)
-          TeamAScore++;
-        else
-          TeamBScore++;
-        if(team12 > team22)
-          TeamAScore++;
-        else
-          TeamBScore++;
-        if(team13 > team23)
-          TeamAScore++;
-        else
-          TeamBScore++;
+        let TeamAScore = 0,
+          TeamBScore = 0;
+        if (team11 > team21) TeamAScore++;
+        else TeamBScore++;
+        if (team12 > team22) TeamAScore++;
+        else TeamBScore++;
+        if (team13 > team23) TeamAScore++;
+        else TeamBScore++;
 
-        document.getElementById("scoreA").innerText = TeamBScore;
-        document.getElementById("scoreB").innerText = TeamAScore;
+        document.getElementById("scoreA").innerText = TeamAScore;
+        document.getElementById("scoreB").innerText = TeamBScore;
       } else {
         console.log("No data available");
       }
@@ -67,7 +63,7 @@ export const ScoreSet = () => {
     <div style={{ marginTop: "25%" }}>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div className="toolbar">
-          <a className="btn btn_live" style={{display: "none"}}>
+          <a className="btn btn_live" style={{ display: "none" }}>
             Live <span className="live-icon"> </span>
           </a>
           <a
@@ -98,7 +94,8 @@ export const ScoreSet = () => {
         <div className="box box-down cyan">
           <h2 id="TeamA"> Team - A </h2>
           <div className="set-score">
-            <p> SET - 1 &nbsp; &nbsp; &nbsp; &nbsp;</p> <p id="setA1">  score </p>
+            <p> SET - 1 &nbsp; &nbsp; &nbsp; &nbsp; </p>
+            <p id="setA1"> score </p>
           </div>
           <div className="set-score">
             <p> SET - 2 </p> <p id="setA2"> score </p>
@@ -110,7 +107,8 @@ export const ScoreSet = () => {
         <div className="box box-down cyan">
           <h2 id="TeamB"> Team - B </h2>
           <div className="set-score">
-            <p> SET - 1 &nbsp; &nbsp; &nbsp; &nbsp;</p> <p id="setB1"> score </p>
+            <p> SET - 1 &nbsp; &nbsp; &nbsp; &nbsp; </p>
+            <p id="setB1"> score </p>
           </div>
           <div className="set-score">
             <p> SET - 2 </p> <p id="setB2"> score </p>
@@ -120,14 +118,14 @@ export const ScoreSet = () => {
           </div>
         </div>
       </div>
-      <div className="toolbar">
+      <div class="toolbar">
         <img
           type="submit"
           onClick={fixtures}
           id="butt"
-          className="btn btn_live"
-          src="./assets/images/icons8-refresh.svg"
-          alt="refresh"
+          class="btn btn_live"
+          src={refreshIcon}
+          // alt="refresh"
           style={{ backgroundColor: "lightgreen" }}
         />
       </div>
