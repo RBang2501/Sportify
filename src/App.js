@@ -11,6 +11,9 @@ import { About } from "./components/About";
 import { Dashboard } from "./components/Dashboard";
 import { RegisterForSport } from "./components/RegisterForSport";
 import { RegisteredTeams } from "./components/RegisteredTeams";
+import { Menu } from "./components/Menu";
+import { ScoreCard } from "./components/ScoreCard";
+import { ScoreSet } from "./components/ScoreSet";
 
 // styles
 import "./styles/templatemo-training-studio.css";
@@ -30,6 +33,9 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="register-for-sport" element={<RegisterForSport />} />
           <Route path="registered-teams" element={<RegisteredTeams />} />
+          <Route path="sport-menu" element={<Menu/>} />
+          <Route path="score-card" element={<ScoreCard />} />
+          <Route path="score-set" element={<ScoreSet />} />
         </Routes>
         {/* <Footer /> */}
       </AuthProvider>

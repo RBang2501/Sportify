@@ -1,65 +1,42 @@
-import React from 'react'
-import "../styles/listbox.css"
-import { currSport } from './Dashboard';
-import { getDatabase, ref, set, push, update, get, child} from "firebase/database";
+import React from "react";
+import "../styles/listbox.css";
+import { currSport } from "./Dashboard";
+import {
+  getDatabase,
+  ref,
+  set,
+  push,
+  update,
+  get,
+  child,
+} from "firebase/database";
 
+export var data;
 export const RegisteredTeams = () => {
-    var teams = [];
-    var data = [];
-    var players = [];
+  // var data = retrieveData();
+  const players = [];
+  const teams = [];
+  const items = [];
 
-    function snapshotToArray(snapshot) {
-        var dataArr = [];
-        snapshot.forEach(function(childSnapshot) {
-            var item = childSnapshot.val();
-            item.key = childSnapshot.key;
-            dataArr.push(item);
-        });
-        return dataArr;
-    }
+  const dbRef = ref(getDatabase());
+  get(child(dbRef, `${currSport[0]}/Teams/`)).then((snapshot) => {
+    if (snapshot.exists()) {
+      data = snapshotToArray(snapshot);
+      for (let i = 0; i < data.length; i++) {
+        teams.push(data[i].TeamName);
+      }
 
-    const dbRef = ref(getDatabase());
-    get(child(dbRef, `Basketball/Teams/`)).then((snapshot) => {
-        if (snapshot.exists()) {
-            data = snapshotToArray(snapshot);
-            for (let i = 0; i < data.length; i++) {
-                teams.push(data[i].TeamName);
-            }
-            console.log(data);
-        } else {
-            console.log("No data available");
-        }
-        }).catch((error) => {
-        console.error(error);
-    });
-
-    for (let f = 0; f < teams.length; f++) {
+      for (let f = 0; f < teams.length; f++) {
         document.getElementById(`t${f}`).innerText = teams[f];
-    }
-    for (let i = 0; i < teams.length; i++) {
+      }
+      for (let i = 0; i < teams.length; i++) {
         let btn = document.getElementById(`t${i}`);
         btn.onclick = function() {
             var xxx = teams[i];
             console.log(xxx);
-
-                // database.ref(`${currSport}/Teams/${xxx}`).get()
-                //     .then(snapshot => {
-                //         if (snapshot.exists()) {
-                //             players = snapshotToArray(snapshot);
-                //             console.log(players);
-                //         }
-                //     })
-
-            get(child(dbRef, `Basketball/Teams/${xxx}`)).then((snapshot) => {
-                if (snapshot.exists()) {
-                    players = snapshotToArray(snapshot);
-                    console.log(players);
-                } else {
-                    console.log("No data available");
-                }
-                }).catch((error) => {
-                console.error(error);
-            });
+            for(let j=1;j<=Object.keys(data[i]).length - 2;j++){
+                players.push(data[i][j]);
+            }
 
             let list1 = document.getElementById("TeamContent");
             list1.innerText = "Players:\n";
@@ -68,19 +45,61 @@ export const RegisteredTeams = () => {
                 players_list += (d + "\n");
             }
             list1.innerText += players_list;
+            players.splice(0, players.length);
         }
+      }
     }
-    // })
+    return teams.length;
+  });
 
-    const items = [];
-    for(let i=0;i<teams.length;i++){
-        items.push(<a href="#modal" role="button" class="leaderboard__name button__link">
-        <article class="leaderboard__profile" id={"t" + i}>
-            {teams[i]}
-        </article>
-    </a>);
-    }
+  for (let i = 0; i < 11; i++) {
+    items.push(
+      <>
+        <a
+          href="#modal"
+          role="button"
+          className="leaderboard__name button__link"
+        >
+          <article className="leaderboard__profile" id={"t" + i}>
+          </article>
+        </a>
+      </>
+    );
+  }
+
   return (
-    {items}
-  )
+    <div className="leaderboard" style={{width: "100%", marginTop: "30%" }}>
+      <header className="hed" style={{}}><h2>Registered Teams</h2></header>
+      <div>{items}</div>
+      <div className="modal-wrapper" id="modal">
+        <div className="modal-body card">
+          <div className="modal-header">
+            <h2 className="heading">Team Members</h2>
+            <a
+              href="#!"
+              role="button"
+              className="close"
+              aria-label="close this modal"
+            >
+              <svg viewBox="0 0 24 24">
+                <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
+              </svg>
+            </a>
+          </div>
+          <p id="TeamContent">Players:</p>
+        </div>
+        <a href="#!" className="outside-trigger"></a>
+      </div>
+    </div>
+  );
+};
+
+function snapshotToArray(snapshot) {
+  var dataArr = [];
+  snapshot.forEach(function (childSnapshot) {
+    var item = childSnapshot.val();
+    item.key = childSnapshot.key;
+    dataArr.push(item);
+  });
+  return dataArr;
 }

@@ -70,7 +70,7 @@ export const Dashboard = () => {
         <div className="wrapperCard">
             <div className="cards">
                 {doubleSports.map((value, index) => {
-                    return (<Link to="register-for-sport" onClick={function(){currSport = [value, allowedTeamPlayers[index], "team"]}}>
+                    return (<Link to="sport-menu" onClick={function(){currSport = [value, allowedTeamPlayers[index], "team"]}}>
                     <figure className="card">
                         <img src={DoublesSportImgs[index]} />
                         <figcaption>{value}</figcaption>
@@ -96,7 +96,7 @@ export const Dashboard = () => {
         <div className="wrapperCard">
             <div className="cards">
                 {singleSports.map((value, index) => {
-                    return (<Link to="register-for-sport" onClick={function(){currSport = [value, 1, "single"]}}>
+                    return (<Link to="sport-menu" onClick={function(){currSport = [value, 1, "single"]}}>
                     <figure className="card">
                         <img src={SinglesSportImgs[index]} />
                         <figcaption>{value}</figcaption>
@@ -124,7 +124,7 @@ export const Dashboard = () => {
         <div className="wrapperCard">
             <div className="cards">
                 {ESports.map((value, index) => {
-                    return (<Link to="register-for-sport" onClick={function(){currSport = value}}>
+                    return (<Link to="sport-menu" onClick={function(){currSport = value}}>
                     <figure className="card">
                         <img src={EsportImgs[index]} />
                         <figcaption>{value}</figcaption>

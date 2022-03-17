@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const NavBeforeLogin = () => {
   return (
     <header
-      className="header-area header-sticky"
+      className="header-area  header-sticky"
       style={{ top: "0", position: "fixed", backgroundColor: "white" }}
     >
       <div className="container">

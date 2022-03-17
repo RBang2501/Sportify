@@ -43,10 +43,6 @@ export const RegisterForSport = () => {
       members[i] = document.getElementById(`member_${i}`).value;
     }
 
-    // const checkValid = function(){
-    //   for()
-    // }
-
     // Upload to database for team sports
     if(currSport[2] != "team"){
       set(ref(database, `${currSport[0]}/Teams/${tname}`), {

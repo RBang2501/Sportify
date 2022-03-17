@@ -1,32 +1,33 @@
 :root {
     --offset: 1rem;
-  }
-  
-  *,
-  *:before,
-  *:after {
+}
+
+*,
+*:before,
+*:after {
     box-sizing: border-box;
-  }
-  
-  @media (min-width: 40em) {
+}
+
+@media (min-width: 40em) {
     body {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
     }
-  }
-  img,
-  a {
+}
+
+img,
+a {
     display: block;
     height: 100%;
-  }
-  
-  img {
+}
+
+img {
     max-width: 100%;
     width: 100%;
     object-fit: cover;
-  }
-  
-  .grid {
+}
+
+.grid {
     display: grid;
     grid-gap: 0;
     overflow: hidden;
@@ -34,19 +35,22 @@
     margin: 0;
     padding: 0;
     height: 100vh;
-  }
-  .grid li {
+}
+
+.grid li {
     position: relative;
-  }
-  .grid li:hover ~ li:last-child:after,
-  .grid li:last-child:hover:after,
-  .grid li:hover ~ li:last-child:before,
-  .grid li:last-child:hover:before {
+}
+
+.grid li:hover~li:last-child:after,
+.grid li:last-child:hover:after,
+.grid li:hover~li:last-child:before,
+.grid li:last-child:hover:before {
     opacity: 1;
     transition: 1s ease;
-  }
-  .grid li:last-child:after,
-  .grid li:last-child:before {
+}
+
+.grid li:last-child:after,
+.grid li:last-child:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -57,130 +61,149 @@
     -webkit-clip-path: polygon(var(--offset) var(--offset), var(--offset) calc(100% - var(--offset)), calc(100% - var(--offset)) calc(100% - var(--offset)), calc(100% - var(--offset)) var(--offset));
     opacity: 0;
     transition: opacity 1s, transform 1s 1s, background 1s;
-  }
-  .grid li:last-child:after {
+}
+
+.grid li:last-child:after {
     mix-blend-mode: multiply;
     background: #aaafc3;
-  }
-  .grid li:last-child:before {
+}
+
+.grid li:last-child:before {
     backdrop-filter: grayscale(100%) blur(2px);
     -webkit-backdrop-filter: grayscale(100%) blur(2px);
-  }
-  .grid li:nth-child(1):hover ~ li:last-child:after {
+}
+
+.grid li:nth-child(1):hover~li:last-child:after {
     background: #1A237E;
-  }
-  .grid li:nth-child(2):hover ~ li:last-child:after {
+}
+
+.grid li:nth-child(2):hover~li:last-child:after {
     background: #b5a1b7;
-  }
-  .grid li:nth-child(3):hover ~ li:last-child:after {
+}
+
+.grid li:nth-child(3):hover~li:last-child:after {
     background: #aaafc3;
-  }
-  .grid li:nth-child(4):hover ~ li:last-child:after {
+}
+
+.grid li:nth-child(4):hover~li:last-child:after {
     background: #daa384;
-  }
-  .grid li:nth-child(5):hover ~ li:last-child:after {
+}
+
+.grid li:nth-child(5):hover~li:last-child:after {
     background: #a5d6a7;
-  }
-  .grid li:nth-child(6):hover ~ li:last-child:after {
+}
+
+.grid li:nth-child(6):hover~li:last-child:after {
     background: #6c4331;
-  }
-  .grid li:nth-child(7):hover ~ li:last-child:after {
+}
+
+.grid li:nth-child(7):hover~li:last-child:after {
     background: #555;
-  }
-  .grid li:last-child:hover:after {
+}
+
+.grid li:last-child:hover:after {
     background: #a88504;
-  }
-  
-  .grid {
+}
+
+.grid {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 33.3333333333%);
-  }
-  .grid li:last-child:after,
-  .grid li:last-child:before {
+}
+
+.grid li:last-child:after,
+.grid li:last-child:before {
     left: 100%;
     transform: translate3d(-100%, -100%, 0);
-  }
-  .grid li:nth-child(1):hover ~ li:last-child:after,
-  .grid li:nth-child(1):hover ~ li:last-child:before {
+}
+
+.grid li:nth-child(1):hover~li:last-child:after,
+.grid li:nth-child(1):hover~li:last-child:before {
     transform: translate3d(-200%, -200%, 0);
-  }
-  .grid li:nth-child(2):hover ~ li:last-child:after,
-  .grid li:nth-child(2):hover ~ li:last-child:before {
+}
+
+.grid li:nth-child(2):hover~li:last-child:after,
+.grid li:nth-child(2):hover~li:last-child:before {
     transform: translate3d(-100%, -200%, 0);
-  }
-  .grid li:nth-child(3):hover ~ li:last-child:after,
-  .grid li:nth-child(3):hover ~ li:last-child:before {
+}
+
+.grid li:nth-child(3):hover~li:last-child:after,
+.grid li:nth-child(3):hover~li:last-child:before {
     transform: translate3d(0%, -200%, 0);
-  }
-  .grid li:nth-child(4):hover ~ li:last-child:after,
-  .grid li:nth-child(4):hover ~ li:last-child:before {
+}
+
+.grid li:nth-child(4):hover~li:last-child:after,
+.grid li:nth-child(4):hover~li:last-child:before {
     transform: translate3d(-200%, -100%, 0);
-  }
-  .grid li:nth-child(5):hover ~ li:last-child:after,
-  .grid li:nth-child(5):hover ~ li:last-child:before {
+}
+
+.grid li:nth-child(5):hover~li:last-child:after,
+.grid li:nth-child(5):hover~li:last-child:before {
     transform: translate3d(-100%, -100%, 0);
-  }
-  .grid li:nth-child(6):hover ~ li:last-child:after,
-  .grid li:nth-child(6):hover ~ li:last-child:before {
+}
+
+.grid li:nth-child(6):hover~li:last-child:after,
+.grid li:nth-child(6):hover~li:last-child:before {
     transform: translate3d(0%, -100%, 0);
-  }
-  .grid li:nth-child(7):hover ~ li:last-child:after,
-  .grid li:nth-child(7):hover ~ li:last-child:before {
+}
+
+.grid li:nth-child(7):hover~li:last-child:after,
+.grid li:nth-child(7):hover~li:last-child:before {
     transform: translate3d(-200%, 0%, 0);
-  }
-  .grid li:last-child:hover:after,
-  .grid li:last-child:hover:before {
+}
+
+.grid li:last-child:hover:after,
+.grid li:last-child:hover:before {
     transform: translate3d(-100%, 0%, 0);
-  }
-  
-  @media (max-width: 60em) {
+}
+
+@media (max-width: 60em) {
     .grid {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(4, 25%);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 25%);
     }
     .grid li:last-child:after,
-  .grid li:last-child:before {
-      left: 0%;
-      transform: translate3d(-50%, -150%, 0);
+    .grid li:last-child:before {
+        left: 0%;
+        transform: translate3d(-50%, -150%, 0);
     }
-    .grid li:nth-child(1):hover ~ li:last-child:after,
-  .grid li:nth-child(1):hover ~ li:last-child:before {
-      transform: translate3d(-100%, -300%, 0);
+    .grid li:nth-child(1):hover~li:last-child:after,
+    .grid li:nth-child(1):hover~li:last-child:before {
+        transform: translate3d(-100%, -300%, 0);
     }
-    .grid li:nth-child(2):hover ~ li:last-child:after,
-  .grid li:nth-child(2):hover ~ li:last-child:before {
-      transform: translate3d(0%, -300%, 0);
+    .grid li:nth-child(2):hover~li:last-child:after,
+    .grid li:nth-child(2):hover~li:last-child:before {
+        transform: translate3d(0%, -300%, 0);
     }
-    .grid li:nth-child(3):hover ~ li:last-child:after,
-  .grid li:nth-child(3):hover ~ li:last-child:before {
-      transform: translate3d(-100%, -200%, 0);
+    .grid li:nth-child(3):hover~li:last-child:after,
+    .grid li:nth-child(3):hover~li:last-child:before {
+        transform: translate3d(-100%, -200%, 0);
     }
-    .grid li:nth-child(4):hover ~ li:last-child:after,
-  .grid li:nth-child(4):hover ~ li:last-child:before {
-      transform: translate3d(0%, -200%, 0);
+    .grid li:nth-child(4):hover~li:last-child:after,
+    .grid li:nth-child(4):hover~li:last-child:before {
+        transform: translate3d(0%, -200%, 0);
     }
-    .grid li:nth-child(5):hover ~ li:last-child:after,
-  .grid li:nth-child(5):hover ~ li:last-child:before {
-      transform: translate3d(-100%, -100%, 0);
+    .grid li:nth-child(5):hover~li:last-child:after,
+    .grid li:nth-child(5):hover~li:last-child:before {
+        transform: translate3d(-100%, -100%, 0);
     }
-    .grid li:nth-child(6):hover ~ li:last-child:after,
-  .grid li:nth-child(6):hover ~ li:last-child:before {
-      transform: translate3d(0%, -100%, 0);
+    .grid li:nth-child(6):hover~li:last-child:after,
+    .grid li:nth-child(6):hover~li:last-child:before {
+        transform: translate3d(0%, -100%, 0);
     }
-    .grid li:nth-child(7):hover ~ li:last-child:after,
-  .grid li:nth-child(7):hover ~ li:last-child:before {
-      transform: translate3d(-100%, 0%, 0);
+    .grid li:nth-child(7):hover~li:last-child:after,
+    .grid li:nth-child(7):hover~li:last-child:before {
+        transform: translate3d(-100%, 0%, 0);
     }
     .grid li:last-child:hover:after,
-  .grid li:last-child:hover:before {
-      transform: translate3d(0%, 0%, 0);
+    .grid li:last-child:hover:before {
+        transform: translate3d(0%, 0%, 0);
     }
-  
-    :root {
-      --offset: 0;
+     :root {
+        --offset: 0;
     }
-  }
-  .description {
+}
+
+.description {
     font-family: "Unica One", sans-serif;
     font-size: 1.25rem;
     position: absolute;
@@ -196,23 +219,23 @@
     opacity: 0;
     transform: translate3d(0, -50%, 0);
     transition: 0.3s 0s;
-  }
-  
-  li:hover .description {
+}
+
+li:hover .description {
     opacity: 1;
     transition: 0.6s 0.3s;
-  }
-  
-  header {
+}
+
+header {
     padding: 1rem;
     font-family: "Courier New", monospace, serif;
     font-size: 1em;
-  }
-  
-  h1 {
+}
+
+h1 {
     margin-top: 0;
-  }
-  
-  p {
+}
+
+p {
     line-height: 1.4;
-  }
+}

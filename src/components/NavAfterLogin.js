@@ -18,7 +18,7 @@ export const NavAfterLogin = () => {
 
   return (
     <header
-      className="header-area header-sticky"
+      className="header-area  header-sticky"
       style={{ top: "0", position: "fixed", backgroundColor: "white" }}
     >
       <div className="container">
@@ -51,7 +51,7 @@ export const NavAfterLogin = () => {
                 </li>
                 <li className="scroll-to-section">
                   
-                  <a href="#contact-us"> Contact </a>
+                  <Link to="registered-teams"> Contact </Link>
                 </li>
                 <li className="main-button" onClick={handleLogout}>
                   
