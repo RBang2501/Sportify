@@ -61,8 +61,6 @@ export const Dashboard = () => {
                     <div className="section-heading">
                         <h2>Team <em> Sports</em></h2>
                         <img src={lineDecImg} alt="waves"/>
-                        <p>Training Studio is free CSS template for gyms and fitness centers. You are allowed to use
-                            this layout for your business website.</p>
                     </div>
                 </div>
             </div>

@@ -127,7 +127,7 @@ h2 {
         /* top: 150px; */
     }
     .box {
-        width: 100%;
+        width: "500px";
     }
     .header p {
         width: 30%;
