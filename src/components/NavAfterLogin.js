@@ -21,50 +21,120 @@ export const NavAfterLogin = () => {
      className="header-area  header-sticky background-header"
      style={{ top: "0", position: "fixed", backgroundColor: "white" }}
    >
-     <div className="container">
-       <div className="row">
-         <div className="col-12">
-           <nav className="main-nav">
-             <a href="/" className="logo">
-             {/* font-family: 'Poppins', sans-serif; */}
-               Sport <em> ify </em>
-             </a>
-             <ul className="nav" style={{"display":"none"}}>
-               <li className="scroll-to-section">
-                
-                 <Link to="/" className="active">
-                  
-                   Home
-                 </Link>
-               </li>
-               <li className="scroll-to-section">
-                
-                 <a href="#TeamSports"> Team Sports </a>
-               </li>
-               <li className="scroll-to-section">
-                
-                 <a href="#SinglePlayer"> Single Player </a>
-               </li>
-               <li className="scroll-to-section">
-                
-                 <a href="#ESports"> E - Sports </a>
-               </li>
-               <li className="scroll-to-section">
-                
-                 <Link to="#"> Contact </Link>
-               </li>
-               <li className="main-button" onClick={handleLogout}>
-                
-                 <Link to="/"> Logout </Link>
-               </li>
-             </ul>
-             <a className="menu-trigger active">
-               <span> Menu </span>
-             </a>
-           </nav>
-         </div>
-       </div>
-     </div>
+         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="#">
+          Sportify
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to="/">
+                Dashboard
+              </Link>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#TeamSports"> Team Sports </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#SinglePlayer"> Single Player </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#ESports"> E - Sports </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#Contact"> Contact </a>
+            </li>
+            </ul>
+            <li className="nav-item" style={{marginLeft: "30vw"}}>
+              <Link to="myprofile">
+              <strong style={{ color: "white" }}>
+                {currentUser ? currentUser.email : "User is Loged out"}
+              </strong>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <button
+                onClick={handleLogout}
+                className="btn btn-danger ms-4"
+                type="button"
+              >
+                Logout
+              </button>
+            </li>
+          
+        </div>
+      </div>
+    </nav>
    </header>
  );
 };
+/*
+<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="#">
+          Sportify
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to="/">
+                Dashboard
+              </Link>
+            </li>
+            <li className="nav-item active">
+              <a href="#TeamSports"> Team Sports </a>
+            </li>
+            <li className="nav-item active">
+              <a href="#SinglePlayer"> Single Player </a>
+            </li>
+            <li className="nav-item active">
+              <a href="#ESports"> E - Sports </a>
+            </li>
+            <li className="nav-item">
+              <Link to="#"> Contact </Link>
+            </li>
+            </ul>
+            <li className="nav-item" style={{marginLeft: "30vw"}}>
+              <Link to="myprofile">
+              <strong style={{ color: "white" }}>
+                {currentUser ? currentUser.email : "User is Loged out"}
+              </strong>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <button
+                onClick={handleLogout}
+                className="btn btn-danger ms-4"
+                type="button"
+              >
+                Logout
+              </button>
+            </li>
+          
+        </div>
+      </div>
+    </nav>
+ */

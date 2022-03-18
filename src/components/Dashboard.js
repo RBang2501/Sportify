@@ -8,7 +8,7 @@ import "../styles/card.tile.css";
 import "../styles/templatemo-training-studio.css"
 import "../styles/font-awesome.css"
 import "../styles/bootstrap.min.css"
-
+ 
 // images
 import spandanImg from "../assets/spandan.jpeg"
 import lineDecImg from '../assets/line-dec.png'
@@ -152,8 +152,9 @@ export const Dashboard = () => {
  
  
                    {/* //Testimonials */}
+ 
                    <section className="section">
-                       <div className="container" id="Contact">
+                   <div className="container" id="Contact">
                            <div className="row">
                                <div className="col-lg-6 offset-lg-3">
                                    <div className="section-heading">
@@ -164,95 +165,75 @@ export const Dashboard = () => {
  
                            </div>
                        </div>
+                       <div class="container py-5">
  
-                       <div className="container">
-                           <div className="row" style={{ display: "flex", flexWrap: "nowrap", justifyContent: "center" }}>
-                               <div className="set-width col-sm-6 col-md-4 col-lg-3" style={{ maxWidth: "20%" }}>
-                                   <div className="our-team">
-                                       <div className="picture">
-                                           {/* <img className="img-fluid" src="./assets/images/Team/Anurag.jpeg"> */}
-                                           <img alt="Anurag" className="img-fluid" src={Anurag} />
-                                       </div>
-                                       <div className="team-content">
-                                           <h3 className="name">Anurag S Naruka</h3>
-                                           {/* <!-- <h4 className="title">Web Developer</h4> --> */}
-                                       </div>
-                                       <ul className="social">
-                                           <li><a href="https://www.instagram.com/anurag.singh.naruka/" className="fa fa-instagram"
-                                               aria-hidden="true"></a></li>
-                                           <li><a href="https://www.linkedin.com/in/anurag-singh-naruka-7857a7208/" className="fa fa-linkedin"
-                                               aria-hidden="true"></a></li>
+ 
+                           <div class="row text-center">
+                           <div class="col-xl-3 col-sm-6 mb-5">
+                                   <div class="bg-white rounded shadow-sm py-5 px-4"><img src={Anurag} alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />
+                                       <h5 class="mb-0">Anurag Naruka</h5>
+                                       <ul class="social mb-0 list-inline mt-3">
+                                          
+                                           <li class="list-inline-item"><a href="https://www.instagram.com/anurag.singh.naruka/" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                                           <li class="list-inline-item"><a href="https://www.linkedin.com/in/anurag-singh-naruka-7857a7208/" class="social-link"><i class="fa fa-linkedin"></i></a></li>
                                        </ul>
                                    </div>
                                </div>
-                               <div className="set-width col-sm-6 col-md-4 col-lg-3" style={{ maxWidth: "20%" }}>
-                                   <div className="our-team">
-                                       <div className="picture">
-                                           <img src={Jainav} alt="Jainav" className="img-fluid" />
-                                       </div>
-                                       <div className="team-content">
-                                           <h3 className="name">Jainav Sanghvi</h3>
-                                           {/* <!-- <h4 className="title">Web Developer</h4> --> */}
-                                       </div>
-                                       <ul className="social">
-                                           <li><a href="https://www.instagram.com/jainav_sanghvi10/" className="fa fa-instagram"
-                                               aria-hidden="true"></a></li>
-                                           <li><a href="https://www.linkedin.com/in/jainav-sanghvi-933a8a1b8/" className="fa fa-linkedin"
-                                               aria-hidden="true"></a></li>
+                               <div class="col-xl-3 col-sm-6 mb-5">
+                                   <div class="bg-white rounded shadow-sm py-5 px-4"><img src={Rakshit} alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />
+                                       <h5 class="mb-0">Rakshit Bang</h5>
+                                       <ul class="social mb-0 list-inline mt-3">
+                                          
+                                           <li class="list-inline-item"><a href="https://www.instagram.com/rakshit_bang/" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                                           <li class="list-inline-item"><a href="https://www.linkedin.com/in/rakshitbang/" class="social-link"><i class="fa fa-linkedin"></i></a></li>
                                        </ul>
                                    </div>
                                </div>
-                               <div className="set-width col-sm-6 col-md-4 col-lg-3" style={{ maxWidth: "20%" }}>
-                                   <div className="our-team">
-                                       <div className="picture">
-                                           <img className="img-fluid" src={Rakshit} alt="Rakshit" />
-                                       </div>
-                                       <div className="team-content">
-                                           <h3 className="name">Rakshit Bang</h3>
-                                           {/* <!-- <h4 className="title">Web Developer</h4> --> */}
-                                       </div>
-                                       <ul className="social">
-                                           <li><a href="https://www.instagram.com/rakshit_bang/" className="fa fa-instagram"
-                                               aria-hidden="true"></a></li>
-                                           <li><a href="https://www.linkedin.com/in/rakshitbang/" className="fa fa-linkedin"
-                                               aria-hidden="true"></a></li>
+                               {/* <!-- Team item--> */}
+                               <div class="col-xl-3 col-sm-6 mb-5">
+                                   <div class="bg-white rounded shadow-sm py-5 px-4"><img src={Rahul} alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />
+                                       <h5 class="mb-0">Rahul Jain</h5>
+                                       <ul class="social mb-0 list-inline mt-3">
+                                          
+                                           <li class="list-inline-item"><a href="https://www.instagram.com/rahuljain_78/" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                                           <li class="list-inline-item"><a href="https://www.linkedin.com/in/rahul-jain-8749a01b7/" class="social-link"><i class="fa fa-linkedin"></i></a></li>
                                        </ul>
                                    </div>
                                </div>
-                               <div className="set-width col-sm-6 col-md-4 col-lg-3" style={{ maxWidth: "20%" }}>
-                                   <div className="our-team">
-                                       <div className="picture">
-                                           <img className="img-fluid" src={Rahul} alt="Rahul" />
-                                       </div>
-                                       <div className="team-content">
-                                           <h3 className="name">Rahul Jain</h3>
-                                           {/* <!-- <h4 className="title">Web Developer</h4> --> */}
-                                       </div>
-                                       <ul className="social">
-                                           <li><a href="https://www.instagram.com/rahuljain_78/" className="fa fa-instagram"
-                                               aria-hidden="true"></a></li>
-                                           <li><a href="https://www.linkedin.com/in/rahul-jain-8749a01b7/" className="fa fa-linkedin"
-                                               aria-hidden="true"></a></li>
+                               {/* <!-- End--> */}
+ 
+                               {/* <!-- Team item--> */}
+                               <div class="col-xl-3 col-sm-6 mb-5">
+                                   <div class="bg-white rounded shadow-sm py-5 px-4"><img src={Arya} alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />
+                                       <h5 class="mb-0">Arya Kondawar</h5>
+                                       <ul class="social mb-0 list-inline mt-3">
+                                          
+                                           <li class="list-inline-item"><a href="https://www.instagram.com/arya_kondawar/" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                                           <li class="list-inline-item"><a href="https://www.linkedin.com/in/arya-kondawar-212591205/" class="social-link"><i class="fa fa-linkedin"></i></a></li>
                                        </ul>
                                    </div>
                                </div>
-                               <div className="set-width col-sm-6 col-md-4 col-lg-3" style={{ maxWidth: "20%" }}>
-                                   <div className="our-team">
-                                       <div className="picture">
-                                           <img className="img-fluid" src={Arya} alt="Arya" />
-                                       </div>
-                                       <div className="team-content">
-                                           <h3 className="name">Arya Kondawar</h3>
-                                           {/* <!-- <h4 className="title">Web Developer</h4> --> */}
-                                       </div>
-                                       <ul className="social">
-                                           <li><a href="https://www.instagram.com/arya_kondawar/" className="fa fa-instagram"
-                                               aria-hidden="true"></a></li>
-                                           <li><a href="https://www.linkedin.com/in/arya-kondawar-212591205/" className="fa fa-linkedin"
-                                               aria-hidden="true"></a></li>
+                               {/* <!-- End--> */}
+ 
+                               {/* <!-- Team item--> */}
+                              
+                               {/* <!-- End--> */}
+ 
+                               {/* <!-- Team item--> */}
+                              
+                               {/* <!-- End--> */}
+                               <div class="col-xl-3 col-sm-6 mb-5">
+                                   <div class="bg-white rounded shadow-sm py-5 px-4"><img src={Jainav} alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />
+                                       <h5 class="mb-0">Jainav Sanghvi</h5>
+                                       <ul class="social mb-0 list-inline mt-3">
+                                          
+                                           <li class="list-inline-item"><a href="https://www.instagram.com/jainav_sanghvi10/" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                                           <li class="list-inline-item"><a href="https://www.linkedin.com/in/jainav-sanghvi-933a8a1b8/" class="social-link"><i class="fa fa-linkedin"></i></a></li>
                                        </ul>
                                    </div>
                                </div>
+                              
+ 
                            </div>
                        </div>
                    </section>
