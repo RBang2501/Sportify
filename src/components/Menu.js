@@ -3,6 +3,7 @@ import "../styles/SportMenu.css";
 import { Link } from "react-router-dom";
 import { currSport } from "./Dashboard";
 import SpandanLogo from "../assets/spandan-removebg.png";
+import { isAdmin } from "./Login";
 
 const rules = {
   Football:
@@ -31,22 +32,18 @@ const rules = {
   // "Gym Event":''
 };
 export const Menu = () => {
-    var temp =  [];
-    temp = currSport;
     // console.log(currSport);
-    // sessionStorage.setItem('currentSport','rakshit');
-    // console.log(sessionStorage.getItem('currentSport'));
+
   window.onbeforeunload = function () {
-    sessionStorage.setItem('currentSport', temp);
+    localStorage.setItem('currentSport', currSport);
   };
   const handleClick = () => {
     window.open(rules[currSport[0]]);
   };
   window.onload = function () {
-    // console.log("AnuragBsdk");  
-    var t = [];
-    t = sessionStorage.getItem('currentSport');
-    //currSport = text.split(",");
+    var t;
+    t = localStorage.getItem('currentSport');
+    currSport = t.split(",");
     //console.log(text.split(","));
     console.log(t);
   };
@@ -59,7 +56,7 @@ export const Menu = () => {
           src={SpandanLogo}
           alt="SpandanLogo"
         />
-      </div>{" "}
+      </div>
       <main className="leaderboard__profiles">
         <Link
           to="/register-for-sport"
@@ -67,37 +64,39 @@ export const Menu = () => {
           className="leaderboard__name button__link"
         >
           <article className="leaderboard__profile" id="menu_item0">
-            Create team{" "}
+            Create team
           </article>
-        </Link>{" "}
+        </Link>
         <Link
           to="/registered-teams"
           role="button"
           className="leaderboard__name button__link"
         >
           <article className="leaderboard__profile" id="menu_item1">
-            View Teams{" "}
+            View Teams
           </article>
-        </Link>{" "}
-        <Link
-          to="/create-fixtures"
-          role="button"
-          className="leaderboard__name button__link"
-        >
-          <article className="leaderboard__profile" id="menu_item2">
-            Fixtures{" "}
-          </article>{" "}
-        </Link>{" "}
+        </Link>
         <div className="leaderboard__name button__link">
           <article
             className="leaderboard__profile"
             id="menu_item3"
             onClick={handleClick}
           >
-            Rules{" "}
-          </article>{" "}
-        </div>{" "}
-      </main>{" "}
+            Rules
+          </article>
+        </div>
+        {isAdmin ? <Link to="create-fixtures" role="button" className="leaderboard__name button__link">
+          <article className="leaderboard__profile" id="menu_item2">
+            Create Fixtures
+          </article>
+        </Link> :
+        <Link to="view-fixtures">
+          <article className="leaderboard__profile" id="menu_item2">
+            Fixtures
+          </article>
+        </Link>}
+
+      </main>
     </div>
   );
 };

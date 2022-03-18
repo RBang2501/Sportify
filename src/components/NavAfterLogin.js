@@ -51,7 +51,7 @@ export const NavAfterLogin = () => {
                </li>
                <li className="scroll-to-section">
                 
-                 <Link to="registered-teams"> Contact </Link>
+                 <Link to="#"> Contact </Link>
                </li>
                <li className="main-button" onClick={handleLogout}>
                 

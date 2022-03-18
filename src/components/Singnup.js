@@ -18,8 +18,8 @@ export default function Signup() {
       return setError("Passwords do not match");
     }
 
-    if (emailRef.current.value.search("iiitb.ac.in") === -1) {
-      return setError("Use iiitb.ac.in email");
+    if (emailRef.current.value.search("iiitb.ac.in") === -1 && emailRef.current.value.search("gmail.com") === -1) {
+      return setError("Use iiitb.ac.in or gmail.com");
     }
 
     try {

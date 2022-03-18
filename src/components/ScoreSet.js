@@ -12,6 +12,7 @@ import {
   get,
   child,
 } from "firebase/database";
+import { currSport } from "./Dashboard";
 
 export const ScoreSet = () => {
   fixtures();
@@ -21,7 +22,7 @@ export const ScoreSet = () => {
     // document.getElementById("butt").addEventListener("click", (e) => {
     // firebase.database().ref(`Basketball/Fixture/${xxx}`).get().then(snapshot => {
     const dbRef = ref(getDatabase());
-    get(child(dbRef, `Basketball/Fixture/${xxx}`)).then((snapshot) => {
+    get(child(dbRef, `${currSport[0]}/Fixture/${xxx}`)).then((snapshot) => {
       if (snapshot.exists()) {
         var TeamName1 = snapshot.val()["TeamA"];
         var TeamName2 = snapshot.val()["TeamB"];
@@ -84,7 +85,7 @@ export const ScoreSet = () => {
       </div>
       <div className="row1-container">
         <div className="box box-down blue">
-          <h2> Badminton </h2>
+          <h2> {currSport[0]} </h2>
           <div className="set-finals">
             <p id="scoreA"> winsA </p> <p> - </p> <p id="scoreB"> winsB </p>
           </div>
@@ -118,12 +119,12 @@ export const ScoreSet = () => {
           </div>
         </div>
       </div>
-      <div class="toolbar">
+      <div className="toolbar">
         <img
           type="submit"
           onClick={fixtures}
           id="butt"
-          class="btn btn_live"
+          className="btn btn_live"
           src={refreshIcon}
           // alt="refresh"
           style={{ backgroundColor: "lightgreen" }}

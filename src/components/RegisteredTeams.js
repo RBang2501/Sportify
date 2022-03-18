@@ -22,7 +22,7 @@ export const RegisteredTeams = () => {
   get(child(dbRef, `${currSport[0]}/Teams/`)).then((snapshot) => {
     if (snapshot.exists()) {
       data = snapshotToArray(snapshot);
-      //console.log(data);
+      console.log(data);
       for (let i = 0; i < data.length; i++) {
         teams.push(data[i].TeamName);
       }

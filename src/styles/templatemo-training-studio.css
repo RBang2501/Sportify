@@ -1,9 +1,9 @@
 /*
-
+ 
 TemplateMo 548 Training Studio
-
+ 
 https://templatemo.com/tm-548-training-studio
-
+ 
 */
 
 
@@ -22,22 +22,22 @@ Table of contents
 10. preloader
 11. search
 12. portfolio
-
+ 
 --------------------------------------------- */
 
 
-/* 
+/*
 ---------------------------------------------
 font & reset css
---------------------------------------------- 
+---------------------------------------------
 */
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
-/* 
+/*
 ---------------------------------------------
 reset
---------------------------------------------- 
+---------------------------------------------
 */
 
 html,
@@ -182,10 +182,10 @@ p {
 }
 
 
-/* 
+/*
 ---------------------------------------------
 global styles
---------------------------------------------- 
+---------------------------------------------
 */
 
 html,
@@ -205,21 +205,17 @@ body {
 }
 
 @media (max-width: 991px) {
-
     html,
     body {
         overflow-x: hidden;
     }
-
     .mobile-top-fix {
         margin-top: 30px;
         margin-bottom: 0px;
     }
-
     .mobile-bottom-fix {
         margin-bottom: 30px;
     }
-
     .mobile-bottom-fix-big {
         margin-bottom: 60px;
     }
@@ -275,10 +271,10 @@ body {
 }
 
 
-/* 
+/*
 ---------------------------------------------
 header
---------------------------------------------- 
+---------------------------------------------
 */
 
 .background-header {
@@ -548,7 +544,6 @@ header
         padding-left: 12px;
         padding-right: 12px;
     }
-
     .header-area .main-nav:before {
         display: none;
     }
@@ -558,13 +553,11 @@ header
     .header-area .main-nav .logo {
         color: #1e1e1e;
     }
-
     .header-area.header-sticky .nav li a:hover,
     .header-area.header-sticky .nav li a.active {
         color: #ed563b !important;
         opacity: 1;
     }
-
     .header-area {
         background-color: #f7f7f7;
         padding: 0px 15px;
@@ -572,23 +565,18 @@ header
         box-shadow: none;
         text-align: center;
     }
-
     .header-area .container {
         padding: 0px;
     }
-
     .header-area .logo {
         margin-left: 30px;
     }
-
     .header-area .menu-trigger {
         display: block !important;
     }
-
     .header-area .main-nav {
         overflow: hidden;
     }
-
     .header-area .main-nav .nav {
         float: none;
         width: 100%;
@@ -599,31 +587,25 @@ header
         transition: all 0s ease 0s;
         margin-left: 0px;
     }
-
     .header-area .main-nav .nav li:first-child {
         border-top: 1px solid #eee;
     }
-
     .header-area .main-nav .nav li:last-child {
         width: 100%;
         background-color: #ed563b;
         color: #fff;
     }
-
     .header-area .main-nav .nav li:last-child a {
         background-color: #ed563b !important;
     }
-
     .header-area .main-nav .nav li:last-child a:hover,
     .header-area .main-nav .nav li:last-child:hover a {
         background-color: #ed563b !important;
         color: #fff !important;
     }
-
     .header-area.header-sticky .nav {
         margin-top: 80px !important;
     }
-
     .header-area .main-nav .nav li {
         width: 100%;
         background: #fff;
@@ -631,7 +613,6 @@ header
         padding-left: 0px !important;
         padding-right: 0px !important;
     }
-
     .header-area .main-nav .nav li a {
         height: 50px !important;
         line-height: 50px !important;
@@ -640,16 +621,13 @@ header
         background: #f7f7f7 !important;
         color: #232d39 !important;
     }
-
     .header-area .main-nav .nav li:last-child a {
         color: #fff !important;
     }
-
     .header-area .main-nav .nav li a:hover {
         background: #eee !important;
         color: #ed563b !important;
     }
-
     .header-area .main-nav .nav li.submenu ul {
         position: relative;
         visibility: inherit;
@@ -662,27 +640,22 @@ header
         box-shadow: none;
         height: 0px;
     }
-
     .header-area .main-nav .nav li.submenu ul li a {
         font-size: 12px;
         font-weight: 400;
     }
-
     .header-area .main-nav .nav li.submenu ul li a:hover:before {
         width: 0px;
     }
-
     .header-area .main-nav .nav li.submenu ul.active {
         height: auto !important;
     }
-
     .header-area .main-nav .nav li.submenu:after {
         color: #3B566E;
         right: 25px;
         font-size: 14px;
         top: 15px;
     }
-
     .header-area .main-nav .nav li.submenu:hover ul,
     .header-area .main-nav .nav li.submenu:focus ul {
         height: 0px;
@@ -696,10 +669,10 @@ header
 }
 
 
-/* 
+/*
 ---------------------------------------------
 banner
---------------------------------------------- 
+---------------------------------------------
 */
 
 .main-banner {
@@ -949,10 +922,10 @@ Our Classes
 }
 
 
-/* 
+/*
 ---------------------------------------------
 schedule
---------------------------------------------- 
+---------------------------------------------
 */
 
 #schedule {
@@ -1062,17 +1035,17 @@ schedule
 }
 
 
-/* 
+/*
 ---------------------------------------------
 trainers
---------------------------------------------- 
+---------------------------------------------
 */
 
 #trainers .trainer-item {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    padding: 40px;
+    /* padding: 40px; */
 }
 
 #trainers .trainer-item img {
@@ -1120,10 +1093,10 @@ trainers
 }
 
 
-/* 
+/*
 ---------------------------------------------
 contact
---------------------------------------------- 
+---------------------------------------------
 */
 
 #contact-us {
@@ -1204,10 +1177,10 @@ contact
 }
 
 
-/* 
+/*
 ---------------------------------------------
 footer
---------------------------------------------- 
+---------------------------------------------
 */
 
 footer {
@@ -1230,10 +1203,10 @@ footer p a:hover {
 }
 
 
-/* 
+/*
 ---------------------------------------------
 preloader
---------------------------------------------- 
+---------------------------------------------
 */
 
 .js-preloader {
@@ -1331,51 +1304,168 @@ preloader
 }
 
 
-/* 
+/*
 ---------------------------------------------
 responsive
---------------------------------------------- 
+---------------------------------------------
 */
 
 @media (max-width: 992px) {
-
     .main-banner .caption h2 {
-      font-size: 64px;
+        font-size: 64px;
     }
-  
     #features {
-      margin-bottom: 110px;
+        margin-bottom: 110px;
     }
-  
     #features .feature-item {
-      margin-bottom: 30px;
+        margin-bottom: 30px;
     }
-  
     #our-classes .tabs-content {
-      margin-left: 0px;
-      margin-top: 30px;
+        margin-left: 0px;
+        margin-top: 30px;
     }
-  
     .trainer-item {
-      margin-bottom: 30px;
+        margin-bottom: 30px;
     }
-  
     #contact-us #map {
-      margin-bottom: -7px;
+        margin-bottom: -7px;
     }
-  
     #contact-us .contact-form {
-      padding: 30px;
+        padding: 30px;
     }
-  
     #contact-us .contact-form #contact {
-      padding: 30px;
+        padding: 30px;
     }
-  
-  }
-  
-  @media (max-width: 450px) {
+}
+
+@media (max-width: 450px) {
     .feature-item .right-content a.text-button {
-      margin-left: 130px;
+        margin-left: 130px;
     }
-  }
+}
+
+
+/* Credits */
+
+
+/* body {
+   font-family: tahoma;
+   height: 100vh;
+   background-image: url(https://picsum.photos/g/3000/2000);
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   align-items: center;
+ } */
+
+.our-team {
+    padding: 30px 0 40px;
+    margin-bottom: 30px;
+    background-color: #f7f5ec;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10%;
+}
+
+.our-team .picture {
+    display: inline-block;
+    height: 130px;
+    width: 130px;
+    margin-bottom: 25px;
+    z-index: 1;
+    position: relative;
+}
+
+.our-team .picture::before {
+    content: "";
+    width: 100%;
+    height: 0;
+    border-radius: 30%;
+    background-color: #090909;
+    position: absolute;
+    bottom: 135%;
+    right: 0;
+    left: 0;
+    opacity: 0.9;
+    transform: scale(3);
+    transition: all 0.3s linear 0s;
+}
+
+.our-team:hover .picture::before {
+    height: 100%;
+}
+
+.our-team .picture::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    background-color: #fff0f0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.our-team .picture img {
+    width: 100%;
+    height: auto;
+    border-radius: 5%;
+    transform: scale(1);
+    transition: all 0.9s ease 0s;
+}
+
+.our-team:hover .picture img {
+    box-shadow: 0 0 0 14px #f7f5ec;
+    transform: scale(0.7);
+}
+
+.our-team .title {
+    display: block;
+    font-size: 15px;
+    font-size: smaller;
+    color: #4e5052;
+    text-transform: capitalize;
+}
+
+.our-team .social {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #070707;
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    transition: all 0.5s ease 0s;
+}
+
+.our-team:hover .social {
+    bottom: 0;
+}
+
+.our-team .social li {
+    display: inline-block;
+}
+
+.our-team .social li a {
+    display: block;
+    padding: 10px;
+    font-size: 17px;
+    color: white;
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+}
+
+.our-team .social li a:hover {
+    color: #171717;
+    background-color: #f7f5ec;
+}
+
+.set-width {
+    max-width: 20%;
+}
+
+.name {
+    font-size: larger;
+}
