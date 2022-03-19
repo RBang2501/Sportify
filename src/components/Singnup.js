@@ -70,7 +70,7 @@ export default function Signup() {
   return (
     <div
       className="container-md"
-      style={{ maxWidth: "500px", position: "relative", marginTop: "10%"}}
+      style={{ maxWidth: "500px", position: "relative", marginTop: "100px"}}
     >
       <h1 className="mt-100 text-center"> Sign Up </h1>
       {error && (
@@ -79,7 +79,7 @@ export default function Signup() {
           {error}
         </div>
       )}
-      <form onSubmit={handleSubmit} className="d-flex flex-column" style={{marginTop: "80px"}}>
+      <form onSubmit={handleSubmit} className="d-flex flex-column" style={{marginTop: "100px"}}>
         <div className="form-outline mb-4">
           <label className="form-label"> Email </label>
           <input

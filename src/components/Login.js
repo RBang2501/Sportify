@@ -32,7 +32,7 @@ export default function Login() {
   return (
     <div
       className="container-md"
-      style={{ maxWidth: "500px", marginTop: "15%" }}
+      style={{ maxWidth: "500px", marginTop: "100px" }}
     >
       <h1 className="mt-100 text-center"> Login </h1>
       {error && (

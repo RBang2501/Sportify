@@ -1,9 +1,9 @@
 /*
-
+ 
 TemplateMo 548 Training Studio
-
+ 
 https://templatemo.com/tm-548-training-studio
-
+ 
 */
 
 
@@ -22,22 +22,22 @@ Table of contents
 10. preloader
 11. search
 12. portfolio
-
+ 
 --------------------------------------------- */
 
 
-/* 
+/*
 ---------------------------------------------
 font & reset css
---------------------------------------------- 
+---------------------------------------------
 */
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
-/* 
+/*
 ---------------------------------------------
 reset
---------------------------------------------- 
+---------------------------------------------
 */
 
 html,
@@ -182,10 +182,10 @@ p {
 }
 
 
-/* 
+/*
 ---------------------------------------------
 global styles
---------------------------------------------- 
+---------------------------------------------
 */
 
 html,
@@ -223,8 +223,14 @@ body {
 
 .section-heading {
     text-align: center;
-    margin-top: 140px;
-    margin-bottom: 80px;
+    margin-top: 120px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .section-heading {
+        margin-top: 80px;
+    }
 }
 
 .section-heading h2 {
@@ -271,10 +277,10 @@ body {
 }
 
 
-/* 
+/*
 ---------------------------------------------
 header
---------------------------------------------- 
+---------------------------------------------
 */
 
 .background-header {
@@ -669,10 +675,10 @@ header
 }
 
 
-/* 
+/*
 ---------------------------------------------
 banner
---------------------------------------------- 
+---------------------------------------------
 */
 
 .main-banner {
@@ -789,7 +795,7 @@ subscribe
 
 #call-to-action {
     padding: 120px 0px;
-    background-image: url(../assets/cta-bg.jpg);
+    /* background-image: url(../assets/cta-bg.jpg); */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -923,15 +929,15 @@ Our Classes
 }
 
 
-/* 
+/*
 ---------------------------------------------
 schedule
---------------------------------------------- 
+---------------------------------------------
 */
 
 #schedule {
     padding: 0px 0px 140px 0px;
-    background-image: url(../assets/schedule-bg.jpg);
+    /* background-image: url(../assets/schedule-bg.jpg); */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1036,10 +1042,10 @@ schedule
 }
 
 
-/* 
+/*
 ---------------------------------------------
 trainers
---------------------------------------------- 
+---------------------------------------------
 */
 
 #trainers .trainer-item {
@@ -1094,10 +1100,10 @@ trainers
 }
 
 
-/* 
+/*
 ---------------------------------------------
 contact
---------------------------------------------- 
+---------------------------------------------
 */
 
 #contact-us {
@@ -1110,7 +1116,7 @@ contact
 
 #contact-us .contact-form {
     padding: 80px;
-    background-image: url(../assets/contact-bg.jpg);
+    /* background-image: url(../assets/contact-bg.jpg); */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1178,10 +1184,10 @@ contact
 }
 
 
-/* 
+/*
 ---------------------------------------------
 footer
---------------------------------------------- 
+---------------------------------------------
 */
 
 footer {
@@ -1204,10 +1210,10 @@ footer p a:hover {
 }
 
 
-/* 
+/*
 ---------------------------------------------
 preloader
---------------------------------------------- 
+---------------------------------------------
 */
 
 .js-preloader {
@@ -1305,10 +1311,10 @@ preloader
 }
 
 
-/* 
+/*
 ---------------------------------------------
 responsive
---------------------------------------------- 
+---------------------------------------------
 */
 
 @media (max-width: 992px) {
@@ -1344,3 +1350,15 @@ responsive
         margin-left: 130px;
     }
 }
+
+
+/* .reveal{
+   position: relative;
+   transform: translateY(100px);
+   opacity: 0;
+   transition: 1s all ease;
+ }
+ .reveal.active{
+   transform: translateY(0);
+   opacity: 1;
+ } */

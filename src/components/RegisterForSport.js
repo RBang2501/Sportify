@@ -23,7 +23,7 @@ export const RegisterForSport = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  
+  const [playercount,setplayercount]=useState(currSport[2]);
   let RegTeams = [];
   let tname;
   let members = [];
@@ -32,7 +32,7 @@ export const RegisterForSport = () => {
   if (currSport.length === 0) navigate("/");
 
   const reqItems = [];
-  for (let i = 0; i < currSport[1]; i++) {
+  for(let i=0;i<playercount;i++){
     let element;
     if (i === 0) {
       element = (
@@ -52,7 +52,6 @@ export const RegisterForSport = () => {
       );
     }
     else{
-    if (i < currSport[2]) {
       element = (
         <div className="createTeam-inputContainer">
           <input
@@ -67,25 +66,9 @@ export const RegisterForSport = () => {
           </label>
         </div>
       );
-    } else {
-      element = (
-        <div className="createTeam-inputContainer">
-          <input
-            type="text"
-            className="createTeam-input"
-            placeholder="a"
-            id={"member_" + i}
-          />
-          <label htmlFor="" className="createTeam-label">
-            Member{i + 1} Email-ID
-          </label>
-        </div>
-      );
-    }
   }
     reqItems.push(element);
   }
-
   function snapshotToArray(snapshot) {
     var returnArr = [];
 
@@ -183,9 +166,8 @@ export const RegisterForSport = () => {
 
     /* read data from DOM */
     tname = document.getElementById("teamName").value;
-    if(tname === ""){
+    if(tname === "")
       return alert("Enter Team Name");
-    }
     let count = 1;
 
     members[0] = document.getElementById("member_0").innerText;
@@ -199,8 +181,7 @@ export const RegisterForSport = () => {
           count++;
       }
     }
-    if(count < currSport[2])
-      alert(`Minimum Members Required Are ${currSport[2]}`);
+
     
     const starCountRef = ref(database, `${currSport[0]}/Teams/`);
     onValue(starCountRef, (snapshot) => {
@@ -214,7 +195,7 @@ export const RegisterForSport = () => {
     let status = Check();
     console.log("checked");
     console.log(status);
-    if (status == true) {
+    if (status == true){
       if (currSport[3] === "team") {
         set(ref(database, `${currSport[0]}/Teams/${tname}`), {
           TeamName: tname,
@@ -235,12 +216,60 @@ export const RegisterForSport = () => {
       setError("Your Team Has Been Registered");
     } else {
       console.log("failure");
-      setError("Your Team Has Not Been Registered. Please Try Again");
+      // setError("Your Team Has Not Been Registered. Please Try Again");
+      console.log(error);
     }
-    if(error)
-    alert(error);
+    if(error!="")
+      alert(error);
     // navigate("/");
   }
+
+/*********************************************** */
+// function isUser(email){
+//   // console.log("is User fnc")
+//     let allUsers = [];
+//     const dbRef = ref(getDatabase());
+//     get(child(dbRef, `Users/`)).then((snapshot) => {
+//       if (snapshot.exists()) {
+//         data = snapshot.val();
+//         console.log(data);
+//         for(let k of Object.keys(data)){
+//             allUsers.push(data[k]["email"]);
+//         }
+//         console.log(allUsers);
+//         for (let i = 0; i < allUsers.length; i++) {
+//           // console.log("**********");
+//           // console.log(allUsers[i], email);
+//           if (allUsers[i] == email) {
+//             return true;
+//           }
+//         }
+//         setError("Invalid User, Please register the user")
+//         return false;
+//       }
+//      });
+
+// }
+// function FindUser(email) {
+//   for (let i = 0; i < RegTeams.length; i++) {
+//     if (RegTeams[i].TeamName != tname) {
+//       console.log(RegTeams[i].TeamName);
+//       for (let j = 0; j < currSport[1]; j++){
+//         console.log(RegTeams[i][j]);
+//         if (RegTeams[i][j] == email) {
+//           return true;
+//         }
+//       }
+//     }
+//   }
+//   return false;
+// }
+// console.log(members);
+// function Check() {
+//   // return true;
+// }
+
+/*********************************************** */
 
   function FindUser(email) {
     for (let i = 0; i < RegTeams.length; i++) {
@@ -257,7 +286,7 @@ export const RegisterForSport = () => {
     return false;
   }
 
-  function Check() {
+  function Check(){
     //To check unique members
     for (let i = 0; i < members.length; i++) {
       let count = 0;
@@ -266,6 +295,7 @@ export const RegisterForSport = () => {
           count++;
         }
         if (count > 1) {
+          setError('Please enter unique team members in the team');
           console.log(count);
           return false;
         }
@@ -313,6 +343,7 @@ export const RegisterForSport = () => {
                   className="createTeam-input"
                   placeholder=""
                   id="teamName"
+                  required
                 />
                 <label htmlFor="" className="createTeam-label">
                   Team Name
@@ -328,7 +359,20 @@ export const RegisterForSport = () => {
               className="createTeam-submitBtn"
               value="Add Team Member"
               id="register"
-              onClick={handleRegistration}
+              onClick={() => {
+                if (playercount+1<=currSport[1]) 
+                  setplayercount(playercount + 1) 
+              }}
+            />
+            <input
+              type="submit"
+              className="createTeam-submitBtn"
+              value="Remove Team Member"
+              id="register"
+              onClick={() => {
+                if (playercount-1>=currSport[2]) 
+                  setplayercount(playercount - 1) 
+              }}
             />
             <input
               type="submit"
