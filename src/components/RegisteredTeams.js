@@ -70,7 +70,7 @@ export const RegisteredTeams = () => {
 
   return (
     <div className="listbox-leaderboard" style={{ width: "100%", marginTop: "10%", marginLeft: "auto", marginRight: "auto" }}>
-     <header className="listbox-hed" ><h2>Registered Teams</h2></header>
+     <header className="listbox-hed" style={{marginTop: "80px"}}><h2>Registered Teams</h2></header>
      <div>{items}</div>
      <div className="listbox-modal-wrapper" id="modal">
        <div className="listbox-modal-body listbox-card">

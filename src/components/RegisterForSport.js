@@ -16,28 +16,47 @@ import {
 } from "firebase/database";
 import { getAuth } from "firebase/auth";
 
+
 const auth = getAuth();
 
 export const RegisterForSport = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
+  
   let RegTeams = [];
   let tname;
   let members = [];
-  let allUsers = [];
+  let data = [];
 
   if (currSport.length === 0) navigate("/");
 
   const reqItems = [];
   for (let i = 0; i < currSport[1]; i++) {
     let element;
+    if (i === 0) {
+      element = (
+        <div className="createTeam-inputContainer">
+          <text
+            type="text"
+            className="createTeam-input"
+            placeholder="a"
+            id={"member_0"}
+            style={{paddingTop: "10px"}}
+            required
+          >{auth.currentUser.email}</text>
+          <label htmlFor="" className="createTeam-label">
+            Member{i + 1} Email-ID
+          </label>
+        </div>
+      );
+    }
+    else{
     if (i < currSport[2]) {
       element = (
         <div className="createTeam-inputContainer">
           <input
-            type="tel"
+            type="text"
             className="createTeam-input"
             placeholder="a"
             id={"member_" + i}
@@ -52,7 +71,7 @@ export const RegisterForSport = () => {
       element = (
         <div className="createTeam-inputContainer">
           <input
-            type="tel"
+            type="text"
             className="createTeam-input"
             placeholder="a"
             id={"member_" + i}
@@ -63,8 +82,10 @@ export const RegisterForSport = () => {
         </div>
       );
     }
+  }
     reqItems.push(element);
   }
+
   function snapshotToArray(snapshot) {
     var returnArr = [];
 
@@ -79,9 +100,6 @@ export const RegisterForSport = () => {
   }
 
   function checkForUser(teams){
-    console.log("hello");
-    console.log(teams)
-    console.log(teams[0], teams[1][1])
     for (let i = 0; i < teams.length; i++) {
       if (teams[i].TeamName === tname) {
         console.log("team found")
@@ -127,19 +145,36 @@ export const RegisterForSport = () => {
       }
       else {
         console.log("Failure");
-        setError("The team was not deleted. (please recheck your team name)");
+        setError("Please Recheck Your Team Name");
       }
+      alert(error);
     });
 
     // navigate("/");
   }
   function isUser(email) {
-    for (let i = 0; i < allUsers.length; i++) {
-      if (allUsers[i] == email) {
-        return true;
+    console.log("is User fnc")
+    let allUsers = [];
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, `Users/`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        data = snapshot.val();
+        console.log(data);
+        for(let k of Object.keys(data)){
+            allUsers.push(data[k]["email"]);
+        }
+        console.log(allUsers);
+        for (let i = 0; i < allUsers.length; i++) {
+          console.log("**********");
+          console.log(allUsers[i], email);
+          if (allUsers[i] == email) {
+            return true;
+          }
+        }
+        setError("Invalid User, Please register the user")
+        return false;
       }
-    }
-    return false;
+     });
   }
 
   async function handleRegistration(e) {
@@ -148,15 +183,25 @@ export const RegisterForSport = () => {
 
     /* read data from DOM */
     tname = document.getElementById("teamName").value;
-    // console.log(tname);
-    // console.log(currSport[1]);
-
-    for (let i = 0; i < currSport[1]; i++) {
-      members[i] = document.getElementById(`member_${i}`).value;
-      if(members[i].search("iiitb.ac.in") === -1 && members[i].search("gmail.ac.in"))
-        return setError("Use Registered Email-Id Only");
-      // console.log(members[i]);
+    if(tname === ""){
+      return alert("Enter Team Name");
     }
+    let count = 1;
+
+    members[0] = document.getElementById("member_0").innerText;
+    for (let i = 1 ; i < currSport[1]; i++) {
+      members[i] = document.getElementById(`member_${i}`).value;
+
+      if(members[i] != ""){
+        if(members[i].search("iiitb.ac.in") === -1 && members[i].search("gmail.com") === -1)
+          return alert("Use Members Email-Id Only");
+        else
+          count++;
+      }
+    }
+    if(count < currSport[2])
+      alert(`Minimum Members Required Are ${currSport[2]}`);
+    
     const starCountRef = ref(database, `${currSport[0]}/Teams/`);
     onValue(starCountRef, (snapshot) => {
       RegTeams = snapshotToArray(snapshot);
@@ -165,6 +210,7 @@ export const RegisterForSport = () => {
     console.log("checking");
     // console.log(RegTeams);
     // console.log(members);
+    
     let status = Check();
     console.log("checked");
     console.log(status);
@@ -186,20 +232,14 @@ export const RegisterForSport = () => {
         });
       }
       console.log("Success");
-      setError("Your team has been registered");
+      setError("Your Team Has Been Registered");
     } else {
       console.log("failure");
-      setError("Your team has not been registered. Please try again");
+      setError("Your Team Has Not Been Registered. Please Try Again");
     }
+    if(error)
+    alert(error);
     // navigate("/");
-  }
-  function isUser(email) {
-    for (let i = 0; i < allUsers.length; i++) {
-      if (allUsers[i] == email) {
-        return true;
-      }
-    }
-    return false;
   }
 
   function FindUser(email) {
@@ -221,7 +261,7 @@ export const RegisterForSport = () => {
     //To check unique members
     for (let i = 0; i < members.length; i++) {
       let count = 0;
-      for (let j = 0; j < members.length; j++) {
+      for (let j = i; j < members.length; j++) {
         if (members[i] == members[j]) {
           count++;
         }
@@ -243,9 +283,10 @@ export const RegisterForSport = () => {
     }
     for (let i = 0; i < members.length; i++) {
       // To check if user is registered on site
-      // if (!isUser(members[i])) {
-      //   return false;
-      // }
+      if (isUser(members[i]) == false) {
+        console.log(members.length, "member length");
+        return false;
+      }
       // To check if users is already present in another team in a single sport
       if (FindUser(members[i]) == true) {
         return false;
@@ -256,20 +297,11 @@ export const RegisterForSport = () => {
   return (
     <div style={{ backgroundImage: "linear-gradient( black, white)" }}>
       <div className="createTeam-signupFrm">
-        
         <div className="createTeam-wrapper">
-        {error && (
-          <div
-            className="createTeam-alert createTeam-alert-success"
-            role="alert" style={{position: "relative", marginTop: "100px", marginBottom: "50px", color: 'red', fontSize: "large", zIndex: "5"}}
-          >
-            {error}
-          </div>
-        )}
           <form
             // onSubmit={handleRegistration}
             className="createTeam-form"
-            style={{ marginTop: "450px", marginBottom: "100px" }}
+            style={{ marginTop: `${currSport[1]*10 + 600}px`, marginBottom: "100px" }}
           >
             <h1 className="createTeam-title"> Create New Team </h1>
             <h2> {currSport[0]} </h2>
@@ -291,6 +323,13 @@ export const RegisterForSport = () => {
             )}
 
             {reqItems}
+            <input
+              type="submit"
+              className="createTeam-submitBtn"
+              value="Add Team Member"
+              id="register"
+              onClick={handleRegistration}
+            />
             <input
               type="submit"
               className="createTeam-submitBtn"

@@ -1,168 +1,159 @@
-
-  .leaderboard__profiles {
-    background-color: #fff;
-    border-radius: 12px 12px 12px 12px;
-    padding: 15px 15px 20px;
-    display: grid;
-    row-gap: 8px;
-    width: 25%;
-    box-shadow: 5px 5px black;
-    height: 300px;
-  }
-  .menu-a{
-    width: 100%;
-    display: flex;
-    /* padding-top: 15%; */
-    /* height: 50%; */
-    flex-direction: column;
-    align-items: center;
-      
-
-      /* padding-top: 15%; */
-      /* height: 50% ; */
-  }
-  .leaderboard__profile {
-    display: grid;
-    justify-content: center;
-    /* grid-template-columns: 1fr 3fr 1fr; */
-    align-items: center;
-    padding: 10px 30px 10px 10px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);
-    cursor: pointer;
-    transition: transform 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98), box-shadow 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98);
-    background-color: lightblue;
-    display: inline-flex;
-    width: 100%;
-    color: black;
-  }
-  .leaderboard__profile:hover {
-    transform: scale(1.2);
-    box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
-  }
-  
-  /* Not of use */
-  /* body {
-    margin: 0;
-    background-color: #eaeaea;
-    display: grid;
-    height: 100vh;
-    place-items: center;
-    font-family: "Source Sans Pro", sans-serif;
-  } */
-  
-
-
-  @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-html {
-  box-sizing: border-box;
-}
-
-/* *,
+ .leaderboard__profiles {
+     background-color: #fff;
+     border-radius: 12px 12px 12px 12px;
+     padding: 15px 15px 20px;
+     display: grid;
+     row-gap: 8px;
+     width: 25%;
+     min-width: 200px;
+     max-width: 600px;
+     box-shadow: 5px 5px black;
+     height: 300px;
+ }
+ 
+ .menu-a {
+     width: 100%;
+     display: flex;
+     /* padding-top: 15%; */
+     /* height: 50%; */
+     flex-direction: column;
+     align-items: center;
+     /* padding-top: 15%; */
+     /* height: 50% ; */
+ }
+ 
+ .leaderboard__profile {
+     display: grid;
+     justify-content: center;
+     /* grid-template-columns: 1fr 3fr 1fr; */
+     align-items: center;
+     padding: 10px 30px 10px 10px;
+     overflow: hidden;
+     border-radius: 10px;
+     box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);
+     cursor: pointer;
+     transition: transform 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98), box-shadow 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98);
+     background-color: lightblue;
+     display: inline-flex;
+     width: 100%;
+     color: black;
+ }
+ 
+ .leaderboard__profile:hover {
+     transform: scale(1.2);
+     box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
+ }
+ /* Not of use */
+ /* body {
+  margin: 0;
+  background-color: #eaeaea;
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  font-family: "Source Sans Pro", sans-serif;
+} */
+ 
+ @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+ html {
+     box-sizing: border-box;
+ }
+ /* *,
 *:before,
 *:after {
-  box-sizing: inherit;
+box-sizing: inherit;
 } */
+ /* body {
+background-image: linear-gradient(48deg, #5a72b5 0%, #e5efe9 70%);
+color: #121943;
 
-/* body {
-  background-image: linear-gradient(48deg, #5a72b5 0%, #e5efe9 70%);
-  color: #121943;
-
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  display: flex;
-  flex-direction:column;
-  font-family: "Lato", sans-serif;
-  font-size: 1em;
-  height: 100%;
-  place-items: center;
-  line-height: 1.2;
-  justify-content: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+display: flex;
+flex-direction:column;
+font-family: "Lato", sans-serif;
+font-size: 1em;
+height: 100%;
+place-items: center;
+line-height: 1.2;
+justify-content: center;
 } */
-
-/* code {
-  background: #e5efe9;
-  border: 1px solid #5a72b5;
-  border-radius: 4px;
-  padding: 2px 4px;
+ /* code {
+background: #e5efe9;
+border: 1px solid #5a72b5;
+border-radius: 4px;
+padding: 2px 4px;
 } */
-
-/* .modal-header {
-  align-items: baseline;
-  display: flex;
-  justify-content: space-between;
+ /* .modal-header {
+align-items: baseline;
+display: flex;
+justify-content: space-between;
 } */
-
-/* .close {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  height: 16px;
-  text-decoration: none;
-  width: 16px;
+ /* .close {
+background: none;
+border: none;
+cursor: pointer;
+display: flex;
+height: 16px;
+text-decoration: none;
+width: 16px;
 }
 .close svg {
-  width: 16px;
+width: 16px;
 }
 
 .modal-wrapper {
-  align-items: center;
-  background: rgba(0, 0, 0, 0.7);
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
+align-items: center;
+background: rgba(0, 0, 0, 0.7);
+bottom: 0;
+display: flex;
+justify-content: center;
+left: 0;
+position: fixed;
+right: 0;
+top: 0;
 } */
-
-/* #modal {
-  opacity: 0;
-  transition: opacity 0.25s ease-in-out;
-  visibility: hidden;
+ /* #modal {
+opacity: 0;
+transition: opacity 0.25s ease-in-out;
+visibility: hidden;
 }
 #modal:target {
-  opacity: 1;
-  visibility: visible;
+opacity: 1;
+visibility: visible;
 }
 #modal:target .modal-body {
-  opacity: 1;
-  transform: translateY(1);
+opacity: 1;
+transform: translateY(1);
 }
 #modal .modal-body {
-  max-width: 500px;
-  opacity: 0;
-  transform: translateY(-100px);
-  transition: opacity 0.25s ease-in-out;
-  width: 100%;
-  z-index: 1;
+max-width: 500px;
+opacity: 0;
+transform: translateY(-100px);
+transition: opacity 0.25s ease-in-out;
+width: 100%;
+z-index: 1;
 } */
-
-/* .outside-trigger {
-  bottom: 0;
-  cursor: default;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
+ /* .outside-trigger {
+bottom: 0;
+cursor: default;
+left: 0;
+position: fixed;
+right: 0;
+top: 0;
 } */
-
-.button__link {
-  text-decoration: none;
-}
-
-.menu-bgimg{
-  display: flex;
-  /* width: 50%; */
-  margin-top: 10%;
-  justify-content: center;
-  
-}
-
-.menu-source-bgimg{
-  width: 50%;
-  display: flex;
-}
+ 
+ .button__link {
+     text-decoration: none;
+ }
+ 
+ .menu-bgimg {
+     display: flex;
+     /* width: 50%; */
+     margin-top: 80px;
+     justify-content: center;
+ }
+ 
+ .menu-source-bgimg {
+     width: 50%;
+     display: flex;
+ }

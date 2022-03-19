@@ -676,6 +676,7 @@ banner
 */
 
 .main-banner {
+    margin-top: 80px;
     position: relative;
 }
 

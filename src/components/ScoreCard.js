@@ -3,10 +3,11 @@ import "../styles/SportMenu.css";
 import { Link } from "react-router-dom";
 import "../styles/Scorecard.css"
 import { getDatabase, ref, set, push, update } from "firebase/database";
+import { useAuth } from "../context/AuthContext";
 
 export const ScoreCard = () => {
-    // firebase.initializeApp(firebaseConfig);
-    //     document.getElementById("butt").addEventListener('click', (e) => {
+    const { currentUser } = useAuth();
+
     async function addFixture(e){
             e.preventDefault()
             var TeamName1 = document.getElementById('TeamName1').value;
@@ -19,17 +20,6 @@ export const ScoreCard = () => {
             var team22 = document.getElementById('team22').value;
             var team23 = document.getElementById('team23').value;
 
-    //         console.log(TeamName1);
-    //         console.log(TeamName2);
-    //         console.log(team11);
-    //         console.log(team12);
-    //         console.log(team13);
-    //         console.log(team21);
-    //         console.log(team22);
-    //         console.log(team23);
-
-
-    //         firebase.database().ref(`Basketball/Fixture/${TeamName1}`).update({
             const database = getDatabase();
             update(ref(database, `Basketball/Fixture/${TeamName1}`), {
                 TeamA: TeamName1,
@@ -44,8 +34,11 @@ export const ScoreCard = () => {
     }
 
   return (
-  <div style={{marginTop: "15%"}}>
-      <div className="row1-container">
+      <>
+      {currentUser ? 
+<>
+<div style={{marginTop: "15%"}}>
+    <div className="row1-container">
         <div className="box box-down cyan">
             <h2>Team-A</h2>
             <div className="updateScore">
@@ -70,5 +63,7 @@ export const ScoreCard = () => {
     <div className="row1-container toolbar">
         <input type="submit" onClick={addFixture} id="butt" className="btn btn_live" value="Update"/>
     </div>
-  </div>
+</div>
+</> : <></>}
+</>
 );};

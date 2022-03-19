@@ -1,6 +1,14 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import {
+  getDatabase,
+  ref,
+  update,
+  child,
+  get,
+  set
+} from "firebase/database";
 
 export default function Signup() {
   const emailRef = useRef();
@@ -19,9 +27,34 @@ export default function Signup() {
     }
 
     if (emailRef.current.value.search("iiitb.ac.in") === -1 && emailRef.current.value.search("gmail.com") === -1) {
-      return setError("Use iiitb.ac.in or gmail.com");
+      return setError("Use iiitb.ac.in");
     }
 
+
+    const database = getDatabase();
+
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, `Users/`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        data = snapshot.val();
+        console.log(data, data);
+      }
+    });
+
+    let uname = document.getElementById("username").value;
+    // set(ref(database, `Users/`), {
+    //   [emailRef.current.value] : emailRef.current.value,
+    // });
+    let email = (emailRef.current.value).toLowerCase();
+    console.log(email);
+
+    let contact = document.getElementById("contact").value;
+    set(ref(database, `Users/${uname}`), {
+      "email" : email,
+      "contact" : contact
+    });
+
+    let data = [];
     try {
       setError("");
       setLoading(true);
@@ -46,7 +79,7 @@ export default function Signup() {
           {error}
         </div>
       )}
-      <form onSubmit={handleSubmit} className="d-flex flex-column">
+      <form onSubmit={handleSubmit} className="d-flex flex-column" style={{marginTop: "80px"}}>
         <div className="form-outline mb-4">
           <label className="form-label"> Email </label>
           <input
@@ -54,6 +87,26 @@ export default function Signup() {
             id="email"
             className="form-control form-control-lg"
             ref={emailRef}
+            required
+          />
+        </div>
+        <div className="form-outline mb-4">
+          <label className="form-label"> Username </label>
+          <input
+            type="text"
+            id="username"
+            className="form-control form-control-lg"
+            // ref={emailRef}
+            required
+          />
+        </div>
+        <div className="form-outline mb-4">
+          <label className="form-label"> Contact </label>
+          <input
+            type="text"
+            id="contact"
+            className="form-control form-control-lg"
+            // ref={emailRef}
             required
           />
         </div>
