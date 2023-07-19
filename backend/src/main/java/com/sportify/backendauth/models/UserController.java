@@ -12,4 +12,15 @@ import com.sportify.backendauth.response.MessageResponse;
 @RequestMapping("/api/test")
 public class UserController {
 
+	@GetMapping("/all")
+	public MessageResponse allAccess() {
+		return new MessageResponse("Server is up.....");
+	}
+
+	@GetMapping("/greeting")
+	@PreAuthorize("isAuthenticated()")
+	public MessageResponse userAccess() {
+
+		return new MessageResponse("Congratulations! You are an authenticated user.");
+	}
 }
