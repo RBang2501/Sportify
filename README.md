@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/RBang2501/Sportify/main/frontend/src/assets/sportify%20logo.png?token=GHSAT0AAAAAACFJE4EMDZ6ZHVQEL6ZBHIXYZFX6NZA" alt="Sportify logo" title="Sportify" align="right" height="60" />
+<img src="https://www.linkpicture.com/q/sportify-logo.png" alt="Sportify logo" title="Sportify" align="right" height="60" />
 
 # Sports Tournament Management System
 ![Commits](https://img.shields.io/github/commit-activity/m/RBang2501/Sportify?style=social)
