@@ -74,7 +74,6 @@ mvn spring-boot:run
 
 ## Future Scope
 The following features could be added to enhance the Sports Tournament Management System:
-- Real-time match updates and live scores for players and spectators.
 - Notification system for instant communication between organizers and participants.
 - Team management functionalities, such as team registration and player roster management.
 - Data analytics and visualization tools to gain insights into tournament performance.
