@@ -17,13 +17,16 @@ The Sports Tournament Management System is a web application built to manage spo
 ## Technologies Used
 
 - Frontend:
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/768px-React-icon.svg.png?20220125121207" alt="ReactJS" width="60" height="60" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/768px-React-icon.svg.png?20220125121207" alt="ReactJS" height="60" />
 
 - Backend:
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Spring_Boot.svg/768px-Spring_Boot.svg.png?20230616230349" alt="Spring-boot" width="60" height="60" style="margin-right: 20px;" /><img src="https://www.svgrepo.com/show/353735/firebase.svg" alt="Firebase" height="60" />
+- Authentication:
+<img src="https://jwt.io/img/logo-asset.svg" alt="Jwt" height="60" style="margin-right: 20px;" />
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Spring_Boot.svg/768px-Spring_Boot.svg.png?20230616230349" alt="Spring-boot" width="60" height="60" style="margin-right: 20px;" /><img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Firebase_Logo.svg" alt="Firebase" height="60" />
-- Authentication: JWT (JSON Web Tokens)
-- Deployment: Kubernetes and Docker
+- Deployment:
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/915px-Docker_%28container_engine%29_logo.svg.png?20161017201350" alt="Docker" height="60" style="margin-right: 20px;" /><img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" alt="Kubernetes" height="60" />
+
 
 ## Installation
 
