@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Sportify-depl
+spec:
+  selector:
+    matchLables:
+      app: frontend
+    replicas: 1
+    template:
+      metadata:
+        lables:
+          app: frontend
+      spec:
+        containers:
+        - name: frontend
+          image: dragonglass/frontend
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+spec:
+  type: NodePort
+  selector:
+    app: frontend
+  ports:
+    - name: frontend
+    port: 3000
+    targetPort: 3000
